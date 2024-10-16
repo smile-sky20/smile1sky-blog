@@ -1,4 +1,4 @@
-button {
+.btn-style {
   border-radius: 8px;
   border: 1px solid transparent;
   padding: 0.6em 1.2em;
@@ -9,10 +9,10 @@ button {
   cursor: pointer;
   transition: border-color 0.25s;
 }
-button:hover {
+.btn-style:hover {
   border-color: #646cff;
 }
-button:focus,
-button:focus-visible {
+.btn-style:focus,
+.btn-style:focus-visible {
   outline: 4px auto -webkit-focus-ring-color;
 }
