@@ -1,19 +1,21 @@
+'use client'
 import Links from './links'
-import Image from 'next/image'
+import TitleLeft from './titleLeft'
+import TitleRight from './titleRight'
+
 export default function Header() {
   return (
-    <>
-      <div className=" flex items-center px-6 bg-indigo-300">
-        <Image
-          className="dark:invert mr-12"
-          src="https://nextjs.org/icons/next.svg"
-          alt="Next.js logo"
-          width={180}
-          height={38}
-          priority
-        />
+    <div
+      className={`sticky top-0 flex items-center px-6 border-b border-accents2 bg-background`}
+      style={{ backdropFilter: 'saturate(180%)' }}
+    >
+      <div className="flex-1 flex items-center">
+        <TitleLeft />
+
         <Links />
       </div>
-    </>
+
+      <TitleRight></TitleRight>
+    </div>
   )
 }

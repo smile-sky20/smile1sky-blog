@@ -1,5 +1,7 @@
+'use client'
 import Link from 'next/link'
 import styles from './index.module.css'
+import { usePathname } from 'next/navigation'
 
 export default function Links() {
   const linksArr = [
@@ -8,15 +10,21 @@ export default function Links() {
     { name: 'Article', url: '/article', svg: true },
     { name: 'About', url: '/about' },
   ]
+  const path = usePathname()
+  const selectedIndex = linksArr.findIndex((item) => item.url.includes(path))
 
   return (
     <>
       {linksArr.map((link, index) => (
-        <div className={`relative`}>
+        <div className={`relative`} key={link.name}>
           <Link
-            key={index}
             href={link.url}
-            className="mr-8 h-16 flex items-center text-sm text-gray-600 transition-colors hover:text-black  active:bg-blue-300"
+            className={`mr-8 h-16 flex items-center text-sm text-accents4 hover:text-accents8 transition-colors   
+              ${
+                selectedIndex === index
+                  ? 'text-blue-500 hover:text-blue-500'
+                  : ''
+              } `}
           >
             {link.name}
           </Link>
@@ -28,7 +36,10 @@ export default function Links() {
               viewBox="0 0 6 6"
               width="7"
             >
-              <path d="M1.25215 5.54731L0.622742 4.9179L3.78169 1.75597H1.3834L1.38936 0.890915H5.27615V4.78069H4.40513L4.41109 2.38538L1.25215 5.54731Z"></path>
+              <path
+                d="M1.25215 5.54731L0.622742 4.9179L3.78169 1.75597H1.3834L1.38936 0.890915H5.27615V4.78069H4.40513L4.41109 2.38538L1.25215 5.54731Z"
+                fill="#999"
+              ></path>
             </svg>
           )}
         </div>

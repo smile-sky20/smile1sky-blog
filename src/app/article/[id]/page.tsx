@@ -1,8 +1,8 @@
 'use client'
 import { usePathname } from 'next/navigation'
-import styles from './index.module.css' // 注意这里使用的是复数形式styles
 
 export default function Article({ params }: { params: { id: string } }) {
+  // usePathname is a Client Component hook that lets you read the current URL's pathname.
   const path = usePathname()
   const id = params.id
   const getInfo = () => {

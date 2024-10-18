@@ -1,8 +1,5 @@
 import type { Metadata } from 'next'
-import { geistSans, geistMono, inter } from '@/app/ui/font'
-
-import Header from '@/components/Header/page'
-import Footer from '@/components/Footer/page'
+import ClientComponent from './ClientComponent'
 import './globals.css'
 
 // 元数据
@@ -17,15 +14,5 @@ export default function RootLayout({
 }: Readonly<{
   children: React.ReactNode
 }>) {
-  return (
-    <html lang="en">
-      <body
-        className={`flex flex-col ${geistSans.variable} ${geistMono.variable} ${inter.className} antialiased bg-indigo-200`}
-      >
-        <Header></Header>
-        <div className="px-12 min-h-[450px]">{children}</div>
-        <Footer></Footer>
-      </body>
-    </html>
-  )
+  return <ClientComponent>{children}</ClientComponent>
 }

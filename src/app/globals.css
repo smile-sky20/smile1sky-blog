@@ -2,19 +2,34 @@
 @tailwind components;
 @tailwind utilities;
 
+* {
+}
+
 :root {
   --background: #ffffff;
   --foreground: #171717;
 
-  --big-bg: rgb(199 210 254 / 1);
-  --content-bg: rgb(165 180 252 / 1);
+  --accents-1: #fafafa;
+  --accents-2: #eaeaea;
+  --accents-3: #999;
+  --accents-4: #888;
+  --accents-5: #666;
+  --accents-6: #444;
+  --accents-7: #333;
+  --accents-8: #111;
 }
+.dark-theme {
+  --background: #171717;
+  --foreground: #ffffff;
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+  --accents-1: #111;
+  --accents-2: #333;
+  --accents-3: #444;
+  --accents-4: #666;
+  --accents-5: #888;
+  --accents-6: #999;
+  --accents-7: #eaeaea;
+  --accents-8: #fafafa;
 }
 
 body {
