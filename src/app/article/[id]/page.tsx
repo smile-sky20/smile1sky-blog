@@ -1,22 +1,109 @@
-'use client'
-import { usePathname } from 'next/navigation'
+import { notFound } from 'next/navigation'
+import Image from 'next/image'
+export async function fetchData(
+  input: string | URL | globalThis.Request,
+  init?: RequestInit
+) {
+  const res = await fetch(input, init)
+  if (!res.ok) {
+    // 如果请求失败，抛出错误
+    throw new Error('Failed to fetch data')
+  }
+  return res.json()
+}
 
-export default function Article({ params }: { params: { id: string } }) {
-  // usePathname is a Client Component hook that lets you read the current URL's pathname.
-  const path = usePathname()
-  const id = params.id
-  const getInfo = () => {
-    console.log('按钮被点击了！', path)
-    // 这里可以添加更多的逻辑，比如调用API获取数据等
+async function fetchUser(id: string) {
+  // 如果路由是 /posts/1，那么 params.id 就是 1
+  const post = await fetchData(
+    `http://47.115.231.249/API/aiqing/api.php?type=json`,
+    {
+      method: 'get',
+      // "force-cache"，此请求应该被缓存，直到手动失效。
+
+      // 'no-store'默认值,此请求应该在每次请求时重新获取。
+      // cache: 'no-store',
+
+      // 设置资源的缓存生命周期 (以秒为单位)。
+      // revalidate: false(无限期缓存资源) | 0(防止资源被缓存。) | number((以秒为单位) 指定资源应该有最多 n 秒的缓存生命周期。)
+      // 1、如果同一路由中两个具有相同 URL 的 fetch 请求有不同的 revalidate 值，将使用较低的值。
+      // 2、为方便起见，如果设置了 revalidate 为数字，就不需要设置 cache 选项。
+      // 3、诸如 { revalidate: 3600, cache: 'no-store' } 这样的冲突选项将导致错误。
+      next: { revalidate: 1000000 },
+    }
+  )
+
+  // 获取拼音
+  const pinyin = await fetchData(
+    `http://47.115.231.249/API/pinyin/api.php?msg=${post.text}`,
+    { method: 'get', next: { revalidate: 1000000 } }
+  )
+  console.log(`🧧🧨 → file: page.tsx:26 → pinyin:`, pinyin.data)
+
+  // 将post.text字符串转换为数组，将拼音转为数组，然后将每个字对应每个拼音
+  const textArray: string[] = post.text.split('')
+  const pinyinArray: string[] = pinyin.data
+  const result = textArray.map(
+    (item: any, index: number): { text: string; pinyin: string } => {
+      return {
+        text: item,
+        pinyin: pinyinArray[index],
+      }
+    }
+  )
+
+  // 通过 props 参数向页面传递博文的数据
+  return result
+}
+
+export default async function Article({ params }: { params: { id: string } }) {
+  const post = await fetchUser(params.id)
+
+  if (!post) {
+    notFound()
   }
 
   return (
-    <div className="my-8">
-      <div className="text-3xl">标题</div>
-      <div className="mt-4">id是{id}</div>
-      <button type="button" className="btn-style mt-4" onClick={getInfo}>
-        点击我
-      </button>
+    <div className={`container mx-auto px-4 py-10`}>
+      <div className="article-warrper max-w-[860px] mx-auto">
+        <div className="time text-accents3 text-sm">
+          Thursday, October 24th 2024
+        </div>
+        <div className="title mt-6 mb-12 text-5xl font-semibold">
+          Our Journey with Caching
+        </div>
+
+        <div className="author text-accents3">Posted by</div>
+
+        <div className="mt-2 pb-4 flex items-center gap-x-2 border-b border-accents5">
+          <div className="avatar overflow-hidden rounded-full">
+            <Image
+              src="/public/blog.png"
+              alt="avatar"
+              className="rounded-full"
+              width={30}
+              height={30}
+              priority={true}
+            />
+          </div>
+          <div>
+            <div className="author-name text-sm font-semibold text-accents7">
+              John Doe
+            </div>
+            <div className="author-desc mt-1 text-xs text-accents4">
+              @John Doe
+            </div>
+          </div>
+        </div>
+
+        <div className="mt-8 flex flex-wrap gap-x-2 text-center text-accents7">
+          {post.map((item, index) => (
+            <div key={index}>
+              <h1 className="text-sm font-bold ">{item.pinyin}</h1>
+              <h1 className="text-2xl font-bold mb-1">{item.text}</h1>
+            </div>
+          ))}
+        </div>
+      </div>
     </div>
   )
 }
