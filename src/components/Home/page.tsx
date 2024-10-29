@@ -26,13 +26,13 @@ export default function Home() {
     )
   }
   return (
-    <div className="flex">
-      <div className="w-1/2 flex items-center justify-end">
+    <div className="max-lg:p-24 lg:p-24 lg:py-12 max-sm:block lg:flex">
+      <div className="flex items-center justify-center">
         {getImage('/takeover.avif', 480, 280, true)}
       </div>
-      <div className="min-h-[350px] grid grid-rows-[20px_1fr_20px] items-center justify-items-center p-8 pb-20 gap-16 sm:p-20 font-[family-name:var(--font-geist-sans)]">
+      <div className="min-h-[350px] grid items-center justify-items-center p-8 max-sm:py-4 sm:p-12 pb-20 gap-16 font-[family-name:var(--font-geist-sans)]">
         <main className="flex flex-col gap-8 row-start-2 items-center sm:items-start">
-          <ol className="list-inside list-decimal text-sm text-center sm:text-left font-[family-name:var(--font-geist-mono)]">
+          <ol className="list-inside list-decimal text-sm text-center sm:text-left max-sm:text-left font-[family-name:var(--font-geist-mono)]">
             <li className="mb-2">
               Get started by editing{' '}
               <code className="bg-black/[.05] dark:bg-white/[.06] px-1 py-0.5 rounded font-semibold">
@@ -44,16 +44,16 @@ export default function Home() {
             <li>Hello nextJs</li>
           </ol>
 
-          <div className="flex gap-4 items-center flex-col sm:flex-row">
+          <div className="flex gap-4 items-center">
             <div
-              className="rounded-full border border-solid border-transparent transition-colors flex items-center justify-center bg-foreground text-accents1 gap-2 hover:bg-accents7 text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5"
+              className="rounded-full border border-solid border-transparent transition-colors flex items-center justify-center bg-foreground text-accents1 gap-2 hover:bg-accents7 text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-12 max-sm:px-6"
               onClick={() => changeTheme('day-theme')}
             >
               {getImage('https://nextjs.org/icons/vercel.svg', 20, 20, true)}
               Day
             </div>
             <div
-              className="rounded-full border border-solid border-accents3 dark:border-white/[.145] transition-colors flex items-center justify-center text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 sm:min-w-44"
+              className="rounded-full border border-solid border-accents3 dark:border-white/[.145] transition-colors flex items-center justify-center text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 sm:min-w-44 max-sm:min-w-28"
               onClick={() => changeTheme('dark-theme')}
             >
               Night

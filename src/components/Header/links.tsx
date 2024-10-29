@@ -14,7 +14,7 @@ export default function Links() {
   const selectedIndex = linksArr.findIndex((item) => item.url.includes(path))
 
   return (
-    <div className="max-lg:hidden lg:flex">
+    <div className="max-sm:hidden sm:flex lg:flex">
       {linksArr.map((link, index) => (
         <div className={`relative`} key={link.name}>
           <Link

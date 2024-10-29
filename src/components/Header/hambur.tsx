@@ -12,7 +12,7 @@ export function Hambur() {
     setIsOpen(!isOpen)
   }
   return (
-    <div className="relative max-lg:block lg:hidden">
+    <div className="relative max-lg:block sm:hidden">
       <div onClick={handleClick}>
         <Hamburge width={24} height={24}></Hamburge>
       </div>
