@@ -4,7 +4,6 @@ import Image from 'next/image'
 import { inter } from '@/ui/font'
 import { lusitana } from '@/ui/font'
 
-import useThemeStore from '@/utils/useThemeStore'
 import styles from './index.module.css'
 
 const linksArr = [
@@ -15,24 +14,6 @@ const linksArr = [
 ]
 
 export default function Blog() {
-  const useTheme = useThemeStore()
-  const getImage = (
-    src: string,
-    width: number,
-    height: number,
-    isPriority: boolean
-  ) => {
-    return (
-      <Image
-        className={useTheme.activeTheme == 'day-theme' ? '' : 'invert'}
-        src={src}
-        alt="Next.js logo"
-        width={width}
-        height={height}
-        priority={isPriority}
-      />
-    )
-  }
   return (
     <div className={`${lusitana.className} ${styles.back} text-2xl`}>
       <div
@@ -62,8 +43,11 @@ export default function Blog() {
               >
                 Smile &frac12; sky.
               </div>
-              <div className="mt-8 text-sm text-accents5">
+              <div className="mt-6 text-base text-accents6">
                 A Front-End Developer
+              </div>
+              <div className="mt-2 text-sm text-accents5">
+                A Runner && A Language student
               </div>
 
               <div className="icon-boxs mt-4 flex">
@@ -81,7 +65,12 @@ export default function Blog() {
             </div>
 
             <div className="card-right flex-1 flex justify-center items-center">
-              {getImage('/blog.png', 300, 300, true)}
+              <Image
+                src="/blog.png"
+                alt="Next.js logo"
+                width={300}
+                height={300}
+              />
             </div>
           </div>
         </div>

@@ -65,19 +65,19 @@ export default async function Article({ params }: { params: { id: string } }) {
   return (
     <div className={`container mx-auto px-4 py-10`}>
       <div className="article-warrper max-w-[860px] mx-auto">
-        <div className="time text-accents3 text-sm">
+        <div className="time text-accents4 text-sm">
           Thursday, October 24th 2024
         </div>
         <div className="title mt-6 mb-12 text-5xl font-semibold">
           Our Journey with Caching
         </div>
 
-        <div className="author text-accents3">Posted by</div>
+        <div className="author text-accents4">Posted by</div>
 
         <div className="mt-2 pb-4 flex items-center gap-x-2 border-b border-accents5">
           <div className="avatar overflow-hidden rounded-full">
             <Image
-              src="/public/blog.png"
+              src="/blog.png"
               alt="avatar"
               className="rounded-full"
               width={30}

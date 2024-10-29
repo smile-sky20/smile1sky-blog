@@ -13,7 +13,7 @@ export default function ExampleClientComponent({
 
   return (
     <>
-      <html lang="en" className={`${theme.activeTheme}`}>
+      <html lang="zh" className={`${theme.activeTheme}`}>
         <body
           className={`flex flex-col justify-between ${geistSans.variable} ${geistMono.variable} ${inter.className} antialiased`}
         >
