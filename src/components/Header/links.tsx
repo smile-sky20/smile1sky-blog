@@ -3,18 +3,18 @@ import Link from 'next/link'
 import styles from './index.module.css'
 import { usePathname } from 'next/navigation'
 
+export const linksArr = [
+  { name: 'HomePage', url: '/' },
+  { name: 'Blog', url: '/blog', svg: true },
+  { name: 'Article', url: '/article', svg: true },
+  { name: 'About', url: '/about' },
+]
 export default function Links() {
-  const linksArr = [
-    { name: 'HomePage', url: '/' },
-    { name: 'Blog', url: '/blog', svg: true },
-    { name: 'Article', url: '/article', svg: true },
-    { name: 'About', url: '/about' },
-  ]
   const path = usePathname()
   const selectedIndex = linksArr.findIndex((item) => item.url.includes(path))
 
   return (
-    <>
+    <div className="max-lg:hidden lg:flex">
       {linksArr.map((link, index) => (
         <div className={`relative`} key={link.name}>
           <Link
@@ -44,6 +44,6 @@ export default function Links() {
           )}
         </div>
       ))}
-    </>
+    </div>
   )
 }

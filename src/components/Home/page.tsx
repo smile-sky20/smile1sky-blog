@@ -1,3 +1,4 @@
+'use client'
 import Image from 'next/image'
 import useThemeStore from '@/utils/useThemeStore'
 import { theme } from '@/utils/useThemeStore'
