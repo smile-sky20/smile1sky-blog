@@ -1,5 +1,5 @@
 import Link from 'next/link'
-
+import Image from 'next/image'
 export function arrowLeft() {
   return (
     <svg
@@ -35,15 +35,31 @@ export default function About() {
     alert('submit')
   }
   return (
-    <div className="mt-12">
-      <div className="container">
-        <div className="content-wrapper">
-          <Link className="black flex" href={'/'}>
-            {arrowLeft()}
-            Back
-          </Link>
+    <div className="container mt-12 mx-auto">
+      <div className="content-wrapper flex flex-col items-center">
+        <Link className="black w-16 flex items-center text-center" href={'/'}>
+          {arrowLeft()}
+          <span className="ml-2">Back</span>
+        </Link>
 
-          <div className="title">About The Smile &frac12; Sky</div>
+        <div className="title">About The Smile &frac12; Sky</div>
+
+        <div className="content-warrpe">
+          <section className="flex">
+            <div className='w-24 h-24 border border-accents2'></div>
+            <div className='w-24 h-24 border border-accents2'></div>
+            <div className='w-24 h-24 border border-accents2'></div>
+            <div className='w-24 h-24 border border-accents2'></div>
+            <div className='w-24 h-24 border border-accents2'></div>
+            <div className='w-24 h-24 border border-accents2'></div>
+            <div className='w-24 h-24 border border-accents2'></div>
+            {/* <Image
+              src="/vercel.svg"
+              width={100}
+              height={100}
+              alt="vercel"
+            ></Image> */}
+          </section>
         </div>
       </div>
     </div>

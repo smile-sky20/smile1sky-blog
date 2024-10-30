@@ -63,12 +63,12 @@ export default async function Article({ params }: { params: { id: string } }) {
   }
 
   return (
-    <div className={`container mx-auto px-4 py-10`}>
+    <div className={`container mx-auto px-4 py-10 max-sm:py-6`}>
       <div className="article-warrper max-w-[860px] mx-auto">
         <div className="time text-accents4 text-sm">
           Thursday, October 24th 2024
         </div>
-        <div className="title mt-6 mb-12 text-5xl font-semibold">
+        <div className="title mt-6 mb-12 max-lg:mb-8 max-sm:mb-6 text-5xl  max-lg:text-4xl max-sm:text-2xl font-semibold">
           Our Journey with Caching
         </div>
 
@@ -98,8 +98,8 @@ export default async function Article({ params }: { params: { id: string } }) {
         <div className="mt-8 flex flex-wrap gap-x-2 text-center text-accents7">
           {post.map((item, index) => (
             <div key={index}>
-              <h1 className="text-sm font-bold ">{item.pinyin}</h1>
-              <h1 className="text-2xl font-bold mb-1">{item.text}</h1>
+              <h1 className="text-sm max-md:text-xs font-bold ">{item.pinyin}</h1>
+              <h1 className="text-2xl max-md:text-xl font-bold mb-1">{item.text}</h1>
             </div>
           ))}
         </div>

@@ -20,10 +20,10 @@ const articleList = [
 export default function Article() {
   return (
     <div className={`${inter.className}`}>
-      <div className="title h-64 grid bg-accents2 text-5xl font-bold">
+      <div className="title h-64 max-lg:h-56 max-md:h-48 max-sm:h-40 grid bg-accents2 text-5xl max-lg:text-4xl max-sm:text-2xl font-bold">
         <div className="place-self-center">The Latest NextJs News</div>
       </div>
-      <div className="article-item-box m-12 grid grid-cols-3 gap-24">
+      <div className="article-item-box m-12 grid grid-cols-3 max-lg:grid-cols-2 max-sm:grid-cols-1 gap-24">
         {articleList.map((article) => {
           return (
             <div

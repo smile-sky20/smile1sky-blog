@@ -15,12 +15,12 @@ const linksArr = [
 
 export default function Blog() {
   return (
-    <div className={`${lusitana.className} ${styles.back} text-2xl`}>
+    <div className={`${lusitana.className} ${styles.back} text-2xl py-12 max-lg:px-6`}>
       <div
         className={`card-warp-border p-1 flex justify-center items-center border border-accents3 rounded-3xl`}
       >
         <div
-          className={`card-warp ${styles.cardBg} p-12 pt-6 bg-background border border-accents3 rounded-3xl shadow-2xl shadow-gray-600`}
+          className={`card-warp ${styles.cardBg} max-sm:px-4 max-md:px-6 max-lg:px-8 lg:px-12 py-6 bg-background border border-accents3 rounded-3xl shadow-2xl shadow-gray-500`}
         >
           <div
             className={`card-tabs  m-auto px-3 py-2 w-96 flex justify-between border border-accents3 rounded-full`}
@@ -36,7 +36,7 @@ export default function Blog() {
             ))}
           </div>
           <div className="card-box mt-12 flex justify-center items-center">
-            <div className="card-left mx-24 flex flex-col">
+            <div className="card-left mx-24 flex flex-col max-md:items-center">
               <div className="text-base">My Name is</div>
               <div
                 className={`${inter.className} mt-4 text-5xl font-bold underline decoration-sky-300`}
@@ -64,7 +64,7 @@ export default function Blog() {
               </button>
             </div>
 
-            <div className="card-right flex-1 flex justify-center items-center">
+            <div className="card-right flex-1 flex max-md:hidden justify-center items-center">
               <Image
                 src="/blog.png"
                 alt="Next.js logo"
