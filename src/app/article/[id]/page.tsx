@@ -28,16 +28,15 @@ async function fetchUser(id: string) {
       // 1、如果同一路由中两个具有相同 URL 的 fetch 请求有不同的 revalidate 值，将使用较低的值。
       // 2、为方便起见，如果设置了 revalidate 为数字，就不需要设置 cache 选项。
       // 3、诸如 { revalidate: 3600, cache: 'no-store' } 这样的冲突选项将导致错误。
-      next: { revalidate: 1000000 },
+      next: { revalidate: 3600 },
     }
   )
 
   // 获取拼音
   const pinyin = await fetchData(
     `http://47.115.231.249/API/pinyin/api.php?msg=${post.text}`,
-    { method: 'get', next: { revalidate: 1000000 } }
+    { method: 'get', next: { revalidate: 3600 } }
   )
-  console.log(`🧧🧨 → file: page.tsx:26 → pinyin:`, pinyin.data)
 
   // 将post.text字符串转换为数组，将拼音转为数组，然后将每个字对应每个拼音
   const textArray: string[] = post.text.split('')
@@ -63,12 +62,12 @@ export default async function Article({ params }: { params: { id: string } }) {
   }
 
   return (
-    <div className={`container mx-auto px-4 py-10 max-sm:py-6`}>
+    <div className={`mx-auto px-4 py-10 max-sm:py-6`}>
       <div className="article-warrper max-w-[860px] mx-auto">
         <div className="time text-accents4 text-sm">
           Thursday, October 24th 2024
         </div>
-        <div className="title mt-6 mb-12 max-lg:mb-8 max-sm:mb-6 text-5xl  max-lg:text-4xl max-sm:text-2xl font-semibold">
+        <div className="title mt-6 mb-12 max-lg:mb-8 max-sm:mb-6 text-5xl  max-lg:text-4xl max-sm:text-2xl transition-all duration-300 font-semibold">
           Our Journey with Caching
         </div>
 

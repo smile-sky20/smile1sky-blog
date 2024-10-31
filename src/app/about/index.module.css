@@ -1,0 +1,9 @@
+.topBox {
+  position: relative;
+  width: calc(80vw);
+  height: calc(25vh);
+  display: grid;
+  background: linear-gradient(90deg, rgba(198, 141, 141, 0.1) 2%, transparent 0),
+    linear-gradient(rgba(198, 141, 141, 0.1) 2%, transparent 0);
+  background-size: calc(80vw / 13) calc(25vh / 4);
+}

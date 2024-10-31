@@ -35,11 +35,11 @@ export default function Blog() {
               </Link>
             ))}
           </div>
-          <div className="card-box mt-12 flex justify-center items-center">
-            <div className="card-left mx-24 flex flex-col max-md:items-center">
+          <div className="card-box mt-12 flex justify-center items-center transition-all duration-500">
+            <div className="card-left mx-24 max-md:mx-20 flex flex-col max-md:items-center">
               <div className="text-base">My Name is</div>
               <div
-                className={`${inter.className} mt-4 text-5xl font-bold underline decoration-sky-300`}
+                className={`${inter.className} mt-4 text-5xl max-lg:text-4xl max-md:text-3xl font-bold underline decoration-sky-300 transition-all duration-200`}
               >
                 Smile &frac12; sky.
               </div>
@@ -64,7 +64,7 @@ export default function Blog() {
               </button>
             </div>
 
-            <div className="card-right flex-1 flex max-md:hidden justify-center items-center">
+            <div className="card-right flex-1 flex max-sm:hidden justify-center items-center">
               <Image
                 src="/blog.png"
                 alt="Next.js logo"
