@@ -32,7 +32,7 @@ export default function Article() {
             >
               <Link
                 href={`/article/${article.id}`}
-                className="article-title text-xl text-blue-500 hover:text-accents7 font-bold"
+                className="article-title text-xl text-blue-500 hover:text-accents7 transition-all  font-bold"
               >
                 {article.title}
               </Link>
@@ -42,7 +42,7 @@ export default function Article() {
 
               <Link
                 href={`/article/${article.id}`}
-                className="block mt-4 py-2 bg-accents2 rounded-md text-accents5 hover:text-accents7 text-center cursor-pointer"
+                className="block mt-4 py-2 bg-accents2 rounded-md text-accents5 hover:text-accents7 dark:hover:bg-accents4 transition-all text-center cursor-pointer"
               >
                 Read More
               </Link>

@@ -97,8 +97,8 @@ export default async function Article({ params }: { params: { id: string } }) {
         <div className="mt-8 flex flex-wrap gap-x-2 text-center text-accents7">
           {post.map((item, index) => (
             <div key={index}>
-              <h1 className="text-sm max-md:text-xs font-bold ">{item.pinyin}</h1>
-              <h1 className="text-2xl max-md:text-xl font-bold mb-1">{item.text}</h1>
+              <h1 className="text-sm max-md:text-xs font-bold selection:text-red-200 dark:selection:text-accents4">{item.pinyin}</h1>
+              <h1 className="text-2xl max-md:text-xl font-bold mb-1 selection:text-red-200 dark:selection:text-accents4">{item.text}</h1>
             </div>
           ))}
         </div>

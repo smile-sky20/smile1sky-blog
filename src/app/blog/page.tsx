@@ -20,7 +20,7 @@ export default function Blog() {
         className={`card-warp-border p-1 flex justify-center items-center border border-accents3 rounded-3xl`}
       >
         <div
-          className={`card-warp ${styles.cardBg} max-sm:px-4 max-md:px-6 max-lg:px-8 lg:px-12 py-6 bg-background border border-accents3 rounded-3xl shadow-2xl shadow-gray-500`}
+          className={`card-warp ${styles.cardBg} max-sm:px-4 max-md:px-6 max-lg:px-8 lg:px-12 py-6 bg-background border border-accents3 rounded-3xl shadow-2xl shadow-accents4`}
         >
           <div
             className={`card-tabs  m-auto px-3 py-2 w-96 flex justify-between border border-accents3 rounded-full`}

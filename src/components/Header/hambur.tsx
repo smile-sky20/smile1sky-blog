@@ -23,7 +23,7 @@ export function Hambur() {
               <Link
                 key={index}
                 href={link.url}
-                className={`p-2 block text-sm text-accents4 hover:text-accents8 transition-colors border-b last:border-b-0`}
+                className={`p-2 block text-sm text-accents6 hover:text-accents8 transition-colors border-b border-accents2 last:border-b-0`}
                 onClick={() => setIsOpen(false)}
               >
                 {link.name}
