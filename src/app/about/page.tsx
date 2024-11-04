@@ -1,10 +1,14 @@
+'use client'
 import Link from 'next/link'
 import Image from 'next/image'
 import styles from './index.module.css'
 import ArrowLeft from '@/ui/svg/arrowLeft'
+import { usePathname, useRouter, useSearchParams } from 'next/navigation'
 
 export default function About() {
-  const num = Math.floor(Math.random() * 5)
+  const router = useRouter()
+  const pathName = usePathname()
+  const pathParams = useSearchParams()
 
   const arrList = [
     '/about/a',
@@ -13,6 +17,9 @@ export default function About() {
     '/about/a/b/c/d',
     '/about/a/b/c/d/e',
   ]
+  const handleClick = () => {
+    router.push('https://www.mi.com/')
+  }
 
   return (
     <div className="my-12 mx-auto max-w-[1080px]">
@@ -23,9 +30,9 @@ export default function About() {
         </Link>
 
         <div className="content-warrpe mt-12">
-          <div className="content-box grid  border border-accents2">
+          <div className="content-box grid  border border-accents2 *:border-b *:border-accents2 last:border-b-0">
             <section
-              className={`${styles.topBox} grid-cols-12 grid-rows-4 max-md:grid-cols-8 border-b  border-accents2 text-accents4`}
+              className={`${styles.topBox} grid-cols-12 grid-rows-4 max-md:grid-cols-8  text-accents4`}
             >
               <div className="row-[2/4] col-[2/12] max-md:col-[2/8]">
                 <div className="grid h-full place-items-center text-5xl max-lg:text-4xl max-md:text-3xl max-sm:text-2xl transition-all duration-200 text-accents7 font-bold selection:text-red-200">
@@ -34,13 +41,38 @@ export default function About() {
               </div>
             </section>
 
-            <section className="py-48 max-md:py-24 text-center border-b border-accents2">
+            <section className="grid grid-cols-3">
+              <div className="p-12 max-md:p-8 px-8 col-[1/4] grid grid-cols-3 grid-rows-2">
+                <div className="col-[1/4] text-xl">
+                  “ 永远相信美好的事情即将发生！ ”
+                </div>
+
+                <div className="flex items-center justify-end row-[2/3] col-[2/4]">
+                  <div className="mr-4">
+                    <div className="text-accents8">雷军 · 2022, 小米CEO</div>
+                    <div className="flex justify-end">
+                      <div className="w-8 h-8 bg-accents8 rounded-xl text-accents1 text-center leading-[2rem] font-bold tracking-[1px]">
+                        MI
+                      </div>
+                    </div>
+                  </div>
+                  <div
+                    className="w-12 h-12 flex justify-center items-center shrink-0 border rounded-full rotate-180 cursor-pointer"
+                    onClick={handleClick}
+                  >
+                    <ArrowLeft className="w-6 h-6 text-accents5"></ArrowLeft>
+                  </div>
+                </div>
+              </div>
+            </section>
+
+            <section className="py-44 max-md:py-24 text-center">
               <div className="text-4xl max-lg:text-3xl max-md:text-2xl font-semibold">
                 Introduce
               </div>
             </section>
 
-            <section className="grid grid-cols-3 max-md:grid-cols-1 *:border-r max-md:*:border-r-0 *:border-accents2 *:p-12 max-md:*:p-8 border-b border-accents2 ">
+            <section className="grid grid-cols-3 max-md:grid-cols-2 max-sm:grid-cols-1 *:border-r last:border-r-0 max-md:*:border-r-0 *:border-accents2 *:p-12 max-md:*:p-8">
               <div className="">
                 <div className="text-xl max-lg:text-3xl max-md:text-2xl font-semibold text-accents8">
                   Infinite scalability, zero config.
@@ -66,27 +98,6 @@ export default function About() {
                 <div className="mt-4 text-accents5">
                   Enable code to run on-demand without needing to manage your
                   own infrastructure, provision servers, or upgrade hardware.
-                </div>
-              </div>
-            </section>
-
-            <section className="grid grid-cols-3">
-              <div className="p-12 max-md:p-8 px-8 col-[1/4] grid grid-cols-3 grid-rows-2">
-                <div className="col-[1/3] text-xl">
-                  “ Our developers are happier, we get to market faster. Vercel
-                  lets us move with confidence. ”
-                </div>
-
-                <div className="flex items-center justify-end row-[2/3] col-[2/4]">
-                  <div className='mr-4'>
-                    <div className="text-accents8">
-                      Jonathan Lemon, Software Engineering Manager
-                    </div>
-                    <div className='font-bold tracking-[4px] text-end'>SONOS</div>
-                  </div>
-                  <div className="w-12 h-12 flex justify-center items-center shrink-0 border rounded-full rotate-180 cursor-pointer">
-                    <ArrowLeft className='w-6 h-6 text-accents5'></ArrowLeft>
-                  </div>
                 </div>
               </div>
             </section>

@@ -18,9 +18,9 @@ async function fetchUser(id: string) {
     `http://47.115.231.249/API/aiqing/api.php?type=json`,
     {
       method: 'get',
-      // "force-cache"，此请求应该被缓存，直到手动失效。
+      // 默认值"force-cache"，此请求应该被缓存，直到手动失效。
 
-      // 'no-store'默认值,此请求应该在每次请求时重新获取。
+      // 'no-store',此请求应该在每次请求时重新获取。
       // cache: 'no-store',
 
       // 设置资源的缓存生命周期 (以秒为单位)。
