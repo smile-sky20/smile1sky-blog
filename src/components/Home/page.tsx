@@ -1,35 +1,19 @@
 'use client'
-import Image from 'next/image'
-import useThemeStore, { getTheme } from '@/utils/useThemeStore'
+import useThemeStore from '@/utils/useThemeStore'
 import { theme } from '@/utils/useThemeStore'
 import Link from 'next/link'
+
+import { ImageComp } from '@/utils'
 
 export default function Home() {
   const useTheme = useThemeStore()
   const changeTheme = (theme: theme) => {
     useTheme.setTheme(theme)
   }
-  const getImage = (
-    src: string,
-    width: number,
-    height: number,
-    isPriority: boolean
-  ) => {
-    return (
-      <Image
-        className={getTheme(useTheme, 'invert', '')}
-        src={src}
-        alt="Next.js logo"
-        width={width}
-        height={height}
-        priority={isPriority}
-      />
-    )
-  }
   return (
     <div className="max-lg:p-24 lg:p-24 lg:py-12 max-sm:block lg:flex">
       <div className="flex items-center justify-center">
-        {getImage('/takeover.avif', 480, 280, true)}
+        <ImageComp src='/takeover.avif' width={480} height={280}></ImageComp>
       </div>
       <div className="min-h-[350px] grid items-center justify-items-center p-8 max-sm:py-4 sm:p-12 pb-20 gap-16 font-[family-name:var(--font-geist-sans)]">
         <main className="flex flex-col gap-8 row-start-2 items-center sm:items-start">
@@ -49,7 +33,7 @@ export default function Home() {
               className="flex items-center justify-center bg-foreground rounded-full border border-solid border-transparent transition-colors  text-accents1 gap-2 hover:bg-accents7 text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-12 max-sm:px-6 cursor-pointer"
               onClick={() => changeTheme('day')}
             >
-              {getImage('https://nextjs.org/icons/vercel.svg', 20, 20, true)}
+              <ImageComp src='https://nextjs.org/icons/vercel.svg' width={20} height={20}></ImageComp>
               Day
             </div>
             <div
@@ -67,7 +51,7 @@ export default function Home() {
             target="_blank"
             rel="noopener noreferrer"
           >
-            {getImage('https://nextjs.org/icons/file.svg', 16, 16, true)}
+            <ImageComp src='https://nextjs.org/icons/file.svg' width={16} height={16}></ImageComp>
             Learn
           </Link>
           <Link
@@ -76,7 +60,7 @@ export default function Home() {
             target="_blank"
             rel="noopener noreferrer"
           >
-            {getImage('https://nextjs.org/icons/window.svg', 16, 16, true)}
+            <ImageComp src='https://nextjs.org/icons/window.svg' width={16} height={16}></ImageComp>
             Examples
           </Link>
           <Link
@@ -85,7 +69,7 @@ export default function Home() {
             target="_blank"
             rel="noopener noreferrer"
           >
-            {getImage('https://nextjs.org/icons/globe.svg', 16, 16, true)}
+            <ImageComp src='https://nextjs.org/icons/globe.svg' width={16} height={16}></ImageComp>
             Go to nextjs.org →
           </Link>
         </footer>
