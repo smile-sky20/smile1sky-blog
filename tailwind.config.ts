@@ -21,6 +21,7 @@ const config: Config = {
         accents6: 'var(--accents-6)',
         accents7: 'var(--accents-7)',
         accents8: 'var(--accents-8)',
+        accents9: 'var(--accents-9)',
       },
       textColor: {
         accents1: 'var(--accents-1)',
@@ -31,6 +32,7 @@ const config: Config = {
         accents6: 'var(--accents-6)',
         accents7: 'var(--accents-7)',
         accents8: 'var(--accents-8)',
+        accents9: 'var(--accents-9)',
       },
     },
   },

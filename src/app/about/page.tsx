@@ -57,10 +57,10 @@ export default function About() {
                     </div>
                   </div>
                   <div
-                    className="w-12 h-12 flex justify-center items-center shrink-0 border rounded-full rotate-180 cursor-pointer"
+                    className="w-12 h-12 flex justify-center items-center shrink-0 bg-background hover:bg-accents2 transition-all border rounded-full rotate-180 cursor-pointer"
                     onClick={handleClick}
                   >
-                    <ArrowLeft className="w-6 h-6 text-accents5"></ArrowLeft>
+                    <ArrowLeft className="w-6 h-6 text-accents5 hover:text-accents7"></ArrowLeft>
                   </div>
                 </div>
               </div>
@@ -75,30 +75,25 @@ export default function About() {
             <section className="grid grid-cols-3 max-md:grid-cols-2 max-sm:grid-cols-1 *:border-r last:border-r-0 max-md:*:border-r-0 *:border-accents2 *:p-12 max-md:*:p-8">
               <div className="">
                 <div className="text-xl max-lg:text-3xl max-md:text-2xl font-semibold text-accents8">
-                  Infinite scalability, zero config.
+                  100KM runner
                 </div>
                 <div className="mt-4 text-base text-accents5">
-                  Enable code to run on-demand without needing to manage your
-                  own infrastructure, provision servers, or upgrade hardware.
+                  Always running in the background, never stop.
                 </div>
               </div>
               <div className="border-r-0">
                 <div className="text-xl font-semibold text-accents8">
-                  Infinite scalability, zero config.
+                  Jpaniese learner
                 </div>
                 <div className="mt-4 text-accents5">
-                  Enable code to run on-demand without needing to manage your
-                  own infrastructure, provision servers, or upgrade hardware.
+                  Learning Japanese is my passion.
                 </div>
               </div>
               <div className="border-r-0">
                 <div className="text-xl font-semibold text-accents8">
-                  Infinite scalability, zero config.
+                  cooker
                 </div>
-                <div className="mt-4 text-accents5">
-                  Enable code to run on-demand without needing to manage your
-                  own infrastructure, provision servers, or upgrade hardware.
-                </div>
+                <div className="mt-4 text-accents5">Study cooking.</div>
               </div>
             </section>
           </div>

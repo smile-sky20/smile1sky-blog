@@ -2,21 +2,19 @@
 @tailwind components;
 @tailwind utilities;
 
-* {
-}
-
 :root {
   --background: #ffffff;
   --foreground: #171717;
 
   --accents-1: #fafafa;
   --accents-2: #eaeaea;
-  --accents-3: #999;
-  --accents-4: #888;
-  --accents-5: #666;
-  --accents-6: #444;
-  --accents-7: #333;
-  --accents-8: #111;
+  --accents-3: #ccc;
+  --accents-4: #aaa;
+  --accents-5: #999;
+  --accents-6: #777;
+  --accents-7: #555;
+  --accents-8: #333;
+  --accents-9: #111;
 }
 .dark {
   --background: #171717;
@@ -24,12 +22,13 @@
 
   --accents-1: #111;
   --accents-2: #333;
-  --accents-3: #444;
-  --accents-4: #666;
-  --accents-5: #888;
-  --accents-6: #999;
-  --accents-7: #eaeaea;
-  --accents-8: #fafafa;
+  --accents-3: #555;
+  --accents-4: #777;
+  --accents-5: #999;
+  --accents-6: #aaa;
+  --accents-7: #ccc;
+  --accents-8: #eaeaea;
+  --accents-9: #fafafa;
 }
 
 body {
@@ -66,19 +65,20 @@ body {
 /* width */
 ::-webkit-scrollbar {
   width: 5px;
-  }
-  
-  /* Track */
-  ::-webkit-scrollbar-track {
+}
+
+/* Track */
+::-webkit-scrollbar-track {
   background: #fff;
-  }
-  
-  /* Handle */
-  ::-webkit-scrollbar-thumb {
-  background: #888;border-radius: 2px;
-  }
-  
-  /* Handle on hover */
-  ::-webkit-scrollbar-thumb:hover {
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: #888;
+  border-radius: 2px;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
   background: #555;
-  }
+}

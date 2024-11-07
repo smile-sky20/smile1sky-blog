@@ -5,7 +5,11 @@ interface ModalProps {
 }
 
 const Modal: FC<ModalProps> = ({ children }) => {
-  return <div className="bg-background border border-accents2 rounded-md shadow-lg">{children}</div>
+  return (
+    <div className="bg-background border border-accents2 rounded-md shadow-lg">
+      {children}
+    </div>
+  )
 }
 
 export default Modal
