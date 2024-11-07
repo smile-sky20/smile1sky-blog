@@ -10,6 +10,16 @@ bun dev
 
 # TailwindCss
 
+- 父元素 hover，子元素样式改变，code 如下：
+
+```html
+<div class="group">
+  <div class="group-hover:text-red-500">Hover me</div>
+  <div class="group-hover:bg-red-500">Hover me</div>
+  <div class="group-hover:text-red-500">Hover me</div>
+</div>
+```
+
 ## tailwind 的响应式布局
 
 ## tailwindcss 的暗黑模式
@@ -64,6 +74,7 @@ router.replace('/')
 ### 解决方案 1：使用状态控制
 
 使用 useState 定义状态，并使用 useEffect 改变状态，然后通过条件判断显示最后的值因为 useEffect 在挂载后生效，所以不会出现报错，且两端已经同步
+
 - 前提：标注'use client'，
 - 结果：服务器端和客户端打印的一样
 
@@ -89,7 +100,9 @@ export default function Test() {
 - 实际效果中，使用这种方法后，控制台不报错，但是服务器终端和浏览器上显示的依然不是同一个
 
 ### 解决方案 2：动态引入
+
 - 前提：取消'use Client'
+
 ```tsx
 import dynamic from 'next/dynamic'
 const DynamicComponent = dynamic(() => import('./hydration'), { ssr: false })
@@ -115,4 +128,3 @@ export default function Hydration() {
   return <div suppressHydrationWarning={true}>{num}</div>
 }
 ```
-
