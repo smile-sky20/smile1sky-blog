@@ -52,6 +52,7 @@ import { persist, createJSONStorage } from 'zustand/middleware'
 ## 路由(Navagation)
 
 ```tsx
+// 使用next/navigation新版，旧版是next/router
 import { usePathname, useRouter, useSearchParams } from 'next/navigation'
 // 路由器
 const router = useRouter()
