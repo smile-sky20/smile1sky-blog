@@ -54,8 +54,15 @@ async function fetchUser(id: string) {
   return result
 }
 
-export default async function Article({ params }: { params: { id: string } }) {
+export default async function Article({
+  params,
+  searchParams,
+}: {
+  params: { id: string }
+  searchParams: { title: string }
+}) {
   const post = await fetchUser(params.id)
+  const title = searchParams.title
 
   if (!post) {
     notFound()
@@ -68,7 +75,7 @@ export default async function Article({ params }: { params: { id: string } }) {
           Thursday, October 24th 2024
         </div>
         <div className="title mt-6 mb-12 max-lg:mb-8 max-sm:mb-6 text-5xl  max-lg:text-4xl max-sm:text-2xl transition-all duration-300 font-semibold">
-          Our Journey with Caching
+          { title }
         </div>
 
         <div className="author text-accents4">Posted by</div>
@@ -97,8 +104,12 @@ export default async function Article({ params }: { params: { id: string } }) {
         <div className="mt-8 flex flex-wrap gap-x-2 text-center text-accents7">
           {post.map((item, index) => (
             <div key={index}>
-              <h1 className="text-sm max-md:text-xs font-bold selection:text-red-200 dark:selection:text-accents4">{item.pinyin}</h1>
-              <h1 className="text-2xl max-md:text-xl font-bold mb-1 selection:text-red-200 dark:selection:text-accents4">{item.text}</h1>
+              <h1 className="text-sm max-md:text-xs font-bold selection:text-red-200 dark:selection:text-accents4">
+                {item.pinyin}
+              </h1>
+              <h1 className="text-2xl max-md:text-xl font-bold mb-1 selection:text-red-200 dark:selection:text-accents4">
+                {item.text}
+              </h1>
             </div>
           ))}
         </div>

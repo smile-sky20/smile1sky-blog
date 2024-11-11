@@ -31,7 +31,7 @@ export default function Article() {
               className="article-item p-4 pb-2 border border-accents2 rounded-2xl"
             >
               <Link
-                href={`/article/${article.id}`}
+                href={`/article/${article.id}?title=${article.title}`}
                 className="article-title text-xl text-blue-500 hover:text-accents7 transition-all  font-bold"
               >
                 {article.title}
@@ -41,8 +41,8 @@ export default function Article() {
               </div>
 
               <Link
-                href={`/article/${article.id}`}
-                className="block mt-4 py-2 bg-accents2 rounded-md text-accents5 hover:text-accents7 dark:hover:bg-accents4 transition-all text-center cursor-pointer"
+                href={`/article/${article.id}?title=${article.title}`}
+                className="block mt-4 py-2 bg-accents2 rounded-md text-accents7 hover:text-accents7 hover:bg-accents3 dark:hover:bg-accents4 transition-all text-center cursor-pointer"
               >
                 Read More
               </Link>
