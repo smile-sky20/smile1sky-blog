@@ -1,5 +1,5 @@
 import { ImageComp } from '@/utils'
-import useThemeStore, { getTheme, theme } from '@/utils/useThemeStore'
+import useThemeStore, { getSvgTheme, theme } from '@/utils/useThemeStore'
 
 export function DayNight() {
   const useTheme = useThemeStore()
@@ -8,7 +8,7 @@ export function DayNight() {
   }
   return (
     <div className="relative p-1 flex gap-2 border border-accents3 rounded-full bg-transparent">
-      <div className={`absolute z-0 w-9 h-9 top-1 ${getTheme(useTheme, 'left-12 bg-purple-700', 'left-1 bg-accents3')} transition-all rounded-full`}></div>
+      <div className={`absolute z-0 w-9 h-9 top-1 ${getSvgTheme(useTheme, 'left-12 bg-purple-700', 'left-1 bg-accents3')} transition-all rounded-full`}></div>
       <button
         className={`p-2 z-[1] rounded-full bg-transparent`}
         onClick={() => changeTheme('day')}

@@ -1,5 +1,5 @@
 import { ISvgProps } from './SvgType'
-import useThemeStore, { getTheme } from '@/utils/useThemeStore'
+import useThemeStore, { getSvgTheme } from '@/utils/useThemeStore'
 
 export default function Hamburge(props: ISvgProps) {
   const useTheme = useThemeStore()
@@ -13,7 +13,7 @@ export default function Hamburge(props: ISvgProps) {
       >
         <path
           d="M4 8h24M4 16h24M4 24h24"
-          stroke={getTheme(useTheme,'#eee','#333')}
+          stroke={getSvgTheme(useTheme,'#eee','#333')}
         ></path>
       </svg>
     </div>

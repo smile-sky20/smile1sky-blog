@@ -36,10 +36,8 @@ const useThemeStore = create<themeStore>()(
 export default useThemeStore
 
 // 专供Svg获取当前背景颜色
-export const getTheme = (
-  theme: any,
+export const getSvgTheme = (
+  theme: themeStore,
   darkColor: string = '#fff',
   dayColor: string = '#000'
-) => {
-  return theme.activeTheme == 'dark' ? darkColor : dayColor
-}
+) => (theme.activeTheme == 'dark' ? darkColor : dayColor)

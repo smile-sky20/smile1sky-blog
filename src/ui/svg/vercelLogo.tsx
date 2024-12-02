@@ -1,4 +1,4 @@
-import useThemeStore, { getTheme } from '@/utils/useThemeStore'
+import useThemeStore, { getSvgTheme } from '@/utils/useThemeStore'
 import { ISvgProps } from './SvgType'
 
 export default function VercelLogo(props: ISvgProps) {
@@ -14,7 +14,7 @@ export default function VercelLogo(props: ISvgProps) {
     >
       <path
         d="M37.5896 0.25L74.5396 64.25H0.639648L37.5896 0.25Z"
-        fill={getTheme(useTheme)}
+        fill={getSvgTheme(useTheme)}
       ></path>
     </svg>
   )

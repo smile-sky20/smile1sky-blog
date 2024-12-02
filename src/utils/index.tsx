@@ -1,5 +1,5 @@
 import Image from 'next/image'
-import useThemeStore, { getTheme, theme } from './useThemeStore'
+import useThemeStore, { getSvgTheme, theme } from './useThemeStore'
 
 interface IImageType {
   src: string
@@ -18,7 +18,7 @@ export const ImageComp = ({
   const useTheme = useThemeStore()
   return (
     <Image
-      className={getTheme(useTheme, 'invert', '')}
+      className={getSvgTheme(useTheme, 'invert', '')}
       src={src}
       alt={alt}
       width={width}
