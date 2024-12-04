@@ -7,16 +7,7 @@ import { usePathname, useRouter, useSearchParams } from 'next/navigation'
 
 export default function About() {
   const router = useRouter()
-  const pathName = usePathname()
-  const pathParams = useSearchParams()
 
-  const arrList = [
-    '/about/a',
-    '/about/a/b',
-    '/about/a/b/c',
-    '/about/a/b/c/d',
-    '/about/a/b/c/d/e',
-  ]
   const handleClick = () => {
     router.push('https://www.mi.com/')
   }
