@@ -54,13 +54,14 @@ async function fetchUser(id: string) {
   return result
 }
 
-export default async function Article({
-  params,
-  searchParams,
-}: {
-  params: { id: string }
-  searchParams: { title: string }
-}) {
+export default async function Article(
+  props: {
+    params: Promise<{ id: string }>
+    searchParams: Promise<{ title: string }>
+  }
+) {
+  const searchParams = await props.searchParams;
+  const params = await props.params;
   const post = await fetchUser(params.id)
   const title = searchParams.title
 
