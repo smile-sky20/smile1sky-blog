@@ -3,7 +3,7 @@ import Link from 'next/link'
 import Image from 'next/image'
 import { ImageComp } from '@/utils'
 
-import useThemeStore, { getTheme } from '@/utils/useThemeStore'
+import useThemeStore from '@/utils/useThemeStore'
 import { theme } from '@/utils/useThemeStore'
 
 export default function Home() {
@@ -12,7 +12,7 @@ export default function Home() {
     useTheme.setTheme(theme)
   }
   return (
-    <div className="max-lg:p-24 lg:p-24 lg:py-12 max-sm:block lg:flex">
+    <div className="max-lg:p-24 lg:p-24 lg:py-12 max-sm:block lg:flex lg:justify-around">
       <div className="flex items-center justify-center">
         <ImageComp src="/takeover.avif" width={480} height={280}></ImageComp>
         {/* <Image className={getTheme(useTheme, 'invert', '')} src={'/takeover.avif'} width={480} height={280} alt='logo'></Image> */}
