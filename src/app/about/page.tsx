@@ -1,9 +1,8 @@
 'use client'
 import Link from 'next/link'
-import Image from 'next/image'
 import styles from './index.module.css'
 import ArrowLeft from '@/ui/svg/arrowLeft'
-import { usePathname, useRouter, useSearchParams } from 'next/navigation'
+import { useRouter } from 'next/navigation'
 
 export default function About() {
   const router = useRouter()
@@ -42,7 +41,7 @@ export default function About() {
                   <div className="mr-4">
                     <div className="text-accents8">雷军 · 2022, 小米CEO</div>
                     <div className="flex justify-end">
-                      <div className="w-8 h-8 bg-accents8 rounded-xl text-accents1 text-center leading-[2rem] font-bold tracking-[1px]">
+                      <div className="w-8 h-8 bg-accents8 rounded-xl text-accents1 text-center leading-[2rem] font-bold tracking-[1px]  select-none">
                         MI
                       </div>
                     </div>
