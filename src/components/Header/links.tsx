@@ -4,7 +4,7 @@ import styles from './index.module.css'
 import { usePathname } from 'next/navigation'
 
 export const linksArr = [
-  { name: 'HomePage', url: '/' },
+  { name: 'Home', url: '/' },
   { name: 'Blog', url: '/blog', svg: true },
   { name: 'Article', url: '/article', svg: true },
   { name: 'About', url: '/about' },
