@@ -17,7 +17,7 @@ export function Hambur() {
         <Hamburge width={24} height={24}></Hamburge>
       </div>
       {isOpen && (
-        <div className={`${styles.modalClass} absolute top-8 right-6`}>
+        <div className={`${isOpen ? 'animate__animated animate__bounceInDown' : 'animate__animated animate__fadeIn'} absolute top-8 right-6`}>
           <Modal>
             {linksArr.map((link, index) => (
               <Link
