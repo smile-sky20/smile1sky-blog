@@ -3,6 +3,10 @@ import { geistSans, geistMono, inter } from '@/ui/font'
 import Header from '@/components/Header/page'
 import Footer from '@/components/Footer/page'
 import useThemeStore from '@/utils/useThemeStore'
+
+import Loading from '@/components/Loading'
+import { Suspense } from 'react'
+
 export default function ExampleClientComponent({
   children,
 }: {
@@ -14,9 +18,11 @@ export default function ExampleClientComponent({
       <body
         className={`flex flex-col justify-between ${geistSans.variable} ${geistMono.variable} ${inter.className} antialiased`}
       >
-        <Header />
-        <div className="min-h-[450px]">{children}</div>
-        <Footer />
+        <Suspense fallback={<Loading />}>
+          <Header />
+          <div className="min-h-[450px]">{children}</div>
+          <Footer />
+        </Suspense>
       </body>
     </html>
   )
