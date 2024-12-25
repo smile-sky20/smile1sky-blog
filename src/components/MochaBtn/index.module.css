@@ -1,0 +1,36 @@
+.btn {
+  padding: 0 24px;
+  display: flex;
+  justify-content: center;
+  align-self: flex-start;
+  width: 100%;
+  height: 100%;
+  background-color: transparent;
+  border: 5px solid #e2e2e2;
+  border-radius: 2px;
+  font-size: 20px;
+  font-weight: 700;
+  letter-spacing: 5px;
+  line-height: 40px;
+  transition: all 0.5s;
+  cursor: pointer;
+  outline: none;
+}
+.btn:hover {
+  background-color: rgb(189, 219, 155);
+  border: 5px solid rgb(189, 219, 155);
+}
+
+@media screen and (max-width: 768px) {
+  .btn {
+    width: 120px;
+    height: 30px;
+    border: 2px solid #e7e7e7;
+    font-size: 14px;
+    line-height: 26px;
+  }
+  .btn:hover {
+    background-color: rgb(189, 219, 155);
+    border: 2px solid rgb(189, 219, 155);
+  }
+}
