@@ -1,6 +1,7 @@
 import type { Metadata } from 'next'
 import ClientComponent from './ClientComponent'
 import './globals.css'
+import 'animate.css'
 
 // 元数据
 export const metadata: Metadata = {
