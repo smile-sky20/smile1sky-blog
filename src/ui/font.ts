@@ -14,6 +14,12 @@ export const geistMono = localFont({
   variable: '--font-geist-mono',
   weight: '100 900',
 })
+// 思源体
+export const notoSansSC = localFont({
+  src: './fonts/siYuan.otf',
+  variable: '--font-noto-sans-sc',
+  weight: '100 900',
+})
 
 // 文艺风
 export const inter = Inter({ subsets: ['latin'] })
