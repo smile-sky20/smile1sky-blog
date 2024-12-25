@@ -7,7 +7,7 @@ import { lusitana } from '@/ui/font'
 import styles from './index.module.css'
 
 const linksArr = [
-  { name: 'HomePage', url: '/' },
+  { name: 'Home', url: '/' },
   { name: 'Blog', url: '/blog', svg: true },
   { name: 'Article', url: '/article', svg: true },
   { name: 'About', url: '/about' },
