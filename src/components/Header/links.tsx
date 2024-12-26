@@ -2,6 +2,7 @@
 import Link from 'next/link'
 import styles from './index.module.css'
 import { usePathname } from 'next/navigation'
+import { siYuan } from '@/ui/font'
 
 export const linksArr = [
   { name: 'Home', url: '/' },
@@ -14,12 +15,12 @@ export default function Links() {
   const selectedIndex = linksArr.findIndex((item) => item.url.includes(path))
 
   return (
-    <div className="max-sm:hidden sm:flex lg:flex">
+    <div className={`max-sm:hidden sm:flex lg:flex ${siYuan.className}`}>
       {linksArr.map((link, index) => (
         <div className={`relative`} key={link.name}>
           <Link
             href={link.url}
-            className={`mr-8 h-16 flex items-center text-sm text-accents4 hover:text-accents8 transition-colors   
+            className={`mr-8 h-16 flex items-center text-lg text-accents7 hover:text-accents8 transition-colors   
               ${
                 selectedIndex === index
                   ? 'text-blue-500 hover:text-blue-500'

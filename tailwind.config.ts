@@ -22,6 +22,7 @@ const config: Config = {
         accents7: 'var(--accents-7)',
         accents8: 'var(--accents-8)',
         accents9: 'var(--accents-9)',
+        mocha: 'var(--mocha)',
       },
       textColor: {
         accents1: 'var(--accents-1)',
@@ -33,6 +34,7 @@ const config: Config = {
         accents7: 'var(--accents-7)',
         accents8: 'var(--accents-8)',
         accents9: 'var(--accents-9)',
+        mocha: 'var(--mocha)',
       },
     },
   },
