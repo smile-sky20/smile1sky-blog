@@ -1,0 +1,61 @@
+import Link from 'next/link'
+import MochaBtn from '../MochaBtn'
+
+export function Top() {
+  return (
+    <>
+      <div className="mb-6 w-full max-w-[1280px] max-md:box-border max-2xl:pl-24 max-xl:pl-20 max-lg:pl-16 max-md:pl-8">
+        <h1 className="text-[72px] text-accents9 max-lg:text-[52px] max-md:text-[42px]">
+          smile1sky
+        </h1>
+        <div className="w-[500px] text-left text-[24px] text-accents7 max-lg:text-[20px] max-md:text-[14px]">
+          ——Mysterious smile from space
+        </div>
+      </div>
+      <div className="heart relative w-full max-w-[1280px] flex justify-center text-white max-2xl:px-24 max-xl:px-20 max-lg:px-16 max-md:px-8">
+        <img
+          src="/home/daozi.png"
+          alt=""
+          className="p-auto w-full h-[600px] transition-all duration-500 max-lg:h-[500px] max-md:h-[400px] object-cover"
+        />
+
+        <div
+          className="heartBd animate__animated animate__fadeInDown pl-[100px] absolute top-[260px] transition-all
+          max-lg:w-full max-lg:top-[220px] max-lg:pl-[150px]
+          max-md:top-[180px] max-md:pl-[100px] max-md:items-start"
+        >
+          <h1
+            className="w-[800px] text-[36px] font-bold tracking-[7px] select-none 
+            max-lg:text-[28px] max-lg:tracking-[4px] 
+            max-md:text-[20px] max-md:tracking-[3px]"
+          >
+            Do What You Want To
+          </h1>
+          <h1
+            className="w-[800px] text-[36px] font-bold tracking-[7px] select-none
+            max-lg:text-[28px] max-lg:tracking-[4px] 
+            max-md:text-[20px] max-md:tracking-[3px]"
+          >
+            Do BEST
+          </h1>
+          <h4
+            className="mt-3 w-[800px] text-[20px] select-none 
+            max-lg:text-[16px]
+            max-md:text-[14px]"
+          >
+            心随梦前行 & 梦随心而动
+          </h4>
+
+          <div className="btn mt-6 w-[150px] h-[50px] max-md:w-[120px] max-md:h-[30px]">
+            <MochaBtn>
+              <Link href={'/about'} className="text-[20px] max-md:text-[14px]">
+                ABOUT
+              </Link>
+            </MochaBtn>
+          </div>
+        </div>
+      </div>
+    </>
+  )
+}
+export default Top
