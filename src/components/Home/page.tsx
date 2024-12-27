@@ -14,7 +14,7 @@ export default function Home() {
   }
   return (
     <div
-      className={`py-24 flex flex-col justify-center items-center ${siYuan.className}`}
+      className={`py-12 flex flex-col justify-center items-center ${siYuan.className}`}
     >
       <div className='top-1'>
       <HomeTop></HomeTop>

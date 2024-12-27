@@ -1,6 +1,3 @@
-import Link from 'next/link'
-import MochaBtn from '../MochaBtn'
-
 export function HomeBottom() {
   return (
     <>
@@ -9,7 +6,7 @@ export function HomeBottom() {
           清晰
         </div>
       </div>
-      <div className="clearBd mt-12 flex justify-center w-[759px]">
+      <div className="clearBd mt-12 flex justify-center">
         <div className="h-full flex items-center text-accents8 text-[24px] tracking-[1px]">
           丢掉幻想，准备斗争
         </div>
