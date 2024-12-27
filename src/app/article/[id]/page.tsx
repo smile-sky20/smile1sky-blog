@@ -39,6 +39,16 @@ export default async function Article(props: {
   const post = await fetchUser(params.id)
   const title = searchParams.title
 
+  const DateObj = new Date()
+  const date = DateObj.toLocaleString('zh-CN', {
+    year: 'numeric',
+    month: 'long',
+    day: 'numeric',
+    hour: 'numeric',
+    minute: 'numeric',
+    second: 'numeric',
+  })
+
   if (!post) {
     notFound()
   }
@@ -46,9 +56,7 @@ export default async function Article(props: {
   return (
     <div className={`mx-auto px-4 py-10 max-sm:py-6`}>
       <div className="article-warrper max-w-[860px] mx-auto">
-        <div className="time text-accents4 text-sm">
-          Thursday, October 24th 2024
-        </div>
+        <div className="time text-accents4 text-sm">{date}</div>
         <div className="title mt-6 mb-12 max-lg:mb-8 max-sm:mb-6 text-5xl  max-lg:text-4xl max-sm:text-2xl transition-all duration-300 font-semibold">
           {title}
         </div>
