@@ -1,5 +1,5 @@
 'use client'
-import { geistSans, geistMono, inter } from '@/ui/font'
+import { siYuan } from '@/ui/font'
 import Header from '@/components/Header/page'
 import Footer from '@/components/Footer/page'
 import useThemeStore from '@/utils/useThemeStore'
@@ -16,11 +16,11 @@ export default function ExampleClientComponent({
   return (
     <html lang="zh" className={`${theme.activeTheme}`}>
       <body
-        className={`flex flex-col justify-between ${geistSans.variable} ${geistMono.variable} ${inter.className} antialiased`}
+        className={`flex flex-col justify-between ${siYuan.variable} `}
       >
         <Suspense fallback={<Loading />}>
           <Header />
-          <div className="min-h-[450px]">{children}</div>
+          <div className="min-h-[80vh]">{children}</div>
           <Footer />
         </Suspense>
       </body>
