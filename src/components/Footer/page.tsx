@@ -4,11 +4,11 @@ import DayNight from './dayNight'
 export default function Footer() {
   return (
     <div
-      className={`px-24 max-h-[240px] border-t border-accents2 bg-background`}
+      className={`px-12 border-t border-accents2 bg-background`}
     >
-      <div className="intro my-4 flex justify-between items-center">
+      <div className="intro my-2 flex justify-between items-center">
         <div className="copy-right text-accents5">
-          Copyright © 2021 smile1sky all rights reserved
+          Copyright © 2024-2025 smile1sky
         </div>
         <DayNight></DayNight>
       </div>
