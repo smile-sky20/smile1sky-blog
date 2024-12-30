@@ -1,6 +1,6 @@
 import { notFound } from 'next/navigation'
 import Image from 'next/image'
-import { GET } from '@/app/api/route'
+import { GET } from '@/app/api'
 
 async function fetchUser(id: string) {
   // 如果路由是 /posts/1，那么 params.id 就是 1
