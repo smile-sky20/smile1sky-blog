@@ -1,8 +1,6 @@
 'use client'
-import Link from 'next/link'
 import Image from 'next/image'
-import { inter } from '@/ui/font'
-import { siYuan } from '@/ui/font'
+import { siYuan } from '@/assets/font'
 
 import styles from './index.module.css'
 
@@ -19,7 +17,7 @@ export default function Blog() {
             <div className="card-left mx-24 max-md:mx-20 flex flex-col max-md:items-center">
               <div className="text-base">My Name is</div>
               <div
-                className={`${inter.className} mt-4 text-5xl max-lg:text-4xl max-md:text-3xl font-bold underline decoration-sky-300 transition-all duration-200`}
+                className={`mt-4 text-5xl max-lg:text-4xl max-md:text-3xl font-bold underline decoration-sky-300 transition-all duration-200`}
               >
                 Smile &frac12; sky.
               </div>

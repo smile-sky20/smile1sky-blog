@@ -1,5 +1,5 @@
 'use client'
-import { siYuan } from '@/ui/font'
+import { siYuan } from '@/assets/font'
 import useThemeStore from '@/utils/useThemeStore'
 import { theme } from '@/utils/useThemeStore'
 

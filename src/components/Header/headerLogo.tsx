@@ -1,6 +1,6 @@
-import { siYuan } from '@/ui/font'
-import SplitLineSvg from '@/ui/svg/splitLine'
-import VercelLogo from '@/ui/svg/vercelLogo'
+import { siYuan } from '@/assets/font'
+import SplitLineSvg from '@/assets/svg/splitLine'
+import VercelLogo from '@/assets/svg/vercelLogo'
 import Link from 'next/link'
 
 export function TitleLeft() {

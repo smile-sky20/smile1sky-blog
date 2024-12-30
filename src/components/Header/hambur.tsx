@@ -1,7 +1,7 @@
 import { linksArr } from '@/components/Header/links'
 import Link from 'next/link'
 import Modal from '@/components/Modal'
-import Hamburge from '@/ui/svg/hamburge'
+import Hamburge from '@/assets/svg/hamburge'
 import { useState } from 'react'
 
 import styles from './index.module.css'

@@ -2,7 +2,7 @@
 import Link from 'next/link'
 import styles from './index.module.css'
 import { usePathname } from 'next/navigation'
-import { siYuan } from '@/ui/font'
+import { siYuan } from '@/assets/font'
 
 export const linksArr = [
   { name: 'Home', url: '/' },

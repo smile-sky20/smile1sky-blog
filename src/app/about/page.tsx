@@ -1,7 +1,7 @@
 'use client'
 import Link from 'next/link'
 import styles from './index.module.css'
-import ArrowLeft from '@/ui/svg/arrowLeft'
+import ArrowLeft from '@/assets/svg/arrowLeft'
 import { useRouter } from 'next/navigation'
 
 export default function About() {

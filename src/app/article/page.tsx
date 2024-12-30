@@ -1,5 +1,5 @@
 import Link from 'next/link'
-import { inter } from '@/ui/font'
+import { inter } from '@/assets/font'
 
 const articleList = [
   {

@@ -1,5 +1,5 @@
 'use client'
-import { siYuan } from '@/ui/font'
+import { siYuan } from '@/assets/font'
 import Header from '@/components/Header/page'
 import Footer from '@/components/Footer/page'
 import useThemeStore from '@/utils/useThemeStore'
