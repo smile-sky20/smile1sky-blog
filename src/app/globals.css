@@ -33,15 +33,9 @@
   --mocha: #7a9876;
 }
 
-@font-face {
-  src: url('@/assets/fonts/siYuan.woff2');
-  font-family: 'siYuan';
-}
-
 body {
   color: var(--foreground);
   background: var(--background);
-  font-family: 'siYuan';
 }
 
 /* width */
