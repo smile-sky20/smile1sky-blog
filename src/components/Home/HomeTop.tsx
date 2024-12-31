@@ -16,7 +16,7 @@ export function Top() {
         <img
           src="/home/daozi.png"
           alt=""
-          className="p-auto w-full h-[600px] transition-all duration-500 max-lg:h-[500px] max-md:h-[400px] object-cover"
+          className="p-auto w-full h-[550px] transition-all duration-500 max-lg:h-[500px] max-md:h-[400px] object-cover"
         />
 
         <div
@@ -26,31 +26,31 @@ export function Top() {
           max-lg:top-[220px] max-lg:left-[120px]
           max-md:top-[180px] max-md:left-[90px]"
         >
-          <h1
+          <div
             className=" text-[36px] font-bold tracking-[7px] select-none 
             max-lg:text-[28px] max-lg:tracking-[4px] 
             max-md:text-[20px] max-md:tracking-[3px]"
           >
             Do What You Want To
-          </h1>
-          <h1
+          </div>
+          <div
             className="text-[36px] font-bold tracking-[7px] select-none
             max-lg:text-[28px] max-lg:tracking-[4px] 
             max-md:text-[20px] max-md:tracking-[3px]"
           >
             Do BEST
-          </h1>
-          <h4
+          </div>
+          <div
             className="mt-3 text-[20px] select-none 
             max-lg:text-[16px]
             max-md:text-[14px]"
           >
             心随梦前行 & 梦随心而动
-          </h4>
+          </div>
 
           <div className="btn mt-6 w-[150px] h-[50px] max-md:w-[120px] max-md:h-[30px]">
             <MochaBtn>
-              <Link href={'/about'} className="text-[20px] max-md:text-[14px]">
+              <Link href={'/about'} className="w-full text-[20px] max-md:text-[14px]">
                 ABOUT
               </Link>
             </MochaBtn>

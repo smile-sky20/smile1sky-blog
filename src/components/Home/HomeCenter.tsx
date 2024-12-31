@@ -8,7 +8,7 @@ export function HomeCenter() {
         My Favorites
       </div>
       <div
-        className="favoBd mt-[60px] flex flex-col justify-center
+        className="favoBd mt-[60px] flex justify-center
         max-md:mt-[30px] max-md:w-[90vw]
       "
       >
@@ -48,14 +48,13 @@ export function HomeCenter() {
         </div>
       </div>
 
-      
       <div
         className="favoBt mt-[60px] flex justify-center
         max-lg:flex-col-reverse"
       >
         <div
-          className="favoBtL flex-1 overflow-hidden flex justify-end
-            max-lg:flex max-lg:justify-center"
+          className="favoBtL flex-1 overflow-hidden 
+          max-lg:flex max-lg:justify-center"
         >
           <div className="favoOut w-[450px] flex justify-center items-center transition-transform duration-500 hover:scale-125">
             <img
