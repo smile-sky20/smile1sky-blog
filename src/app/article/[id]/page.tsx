@@ -71,7 +71,7 @@ export default async function Article(props: {
               className="rounded-full"
               width={30}
               height={30}
-              priority={true}
+              priority
             />
           </div>
           <div>
