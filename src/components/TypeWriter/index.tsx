@@ -1,4 +1,5 @@
 import { FC, RefObject, useEffect, useRef, useState } from 'react'
+import './index.modules.scss'
 
 interface IProps {
   list: string[]
@@ -57,11 +58,7 @@ const Typewriter: FC<IProps> = ({ list, speed = 50, style = '' }) => {
     }
   }, [value, speed, flag, index])
 
-  return (
-    <div className={'typewriter h-[54px] max-lg:h-[42px] max-md:h-[30px]'}>
-      <div className={style}>{displayText}</div>
-    </div>
-  )
+  return <div className={`typewriter ${style}`}>{displayText}</div>
 }
 
 export default Typewriter
