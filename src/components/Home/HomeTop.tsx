@@ -1,7 +1,15 @@
 import Link from 'next/link'
 import MochaBtn from '../MochaBtn'
+import Typewriter from '@/components/TypeWriter'
 
 export function Top() {
+  const TypeWriterList = [
+    'Do BEST',
+    'Do Beautifully',
+    'Do Amazingly',
+    'Do Unbelievably',
+  ]
+
   return (
     <>
       <div className="mb-6 box-border max-2xl:pl-24 max-xl:pl-20 max-lg:pl-16 max-md:pl-6">
@@ -33,13 +41,18 @@ export function Top() {
           >
             Do What You Want To
           </div>
-          <div
-            className="text-[36px] font-bold tracking-[7px] select-none
-            max-lg:text-[28px] max-lg:tracking-[4px] 
-            max-md:text-[20px] max-md:tracking-[3px]"
-          >
-            Do BEST
+
+          <div className={'h-[54px] max-lg:h-[42px] max-md:h-[30px]'}>
+            <Typewriter
+              list={TypeWriterList}
+              style={`
+              text-[36px] font-bold tracking-[7px] select-none
+              max-lg:text-[28px] max-lg:tracking-[4px] 
+              max-md:text-[20px] max-md:tracking-[3px]
+            `}
+            />
           </div>
+
           <div
             className="mt-3 text-[20px] select-none 
             max-lg:text-[16px]
@@ -50,7 +63,10 @@ export function Top() {
 
           <div className="btn mt-6 w-[150px] h-[50px] max-md:w-[120px] max-md:h-[30px]">
             <MochaBtn>
-              <Link href={'/about'} className="w-full text-[20px] max-md:text-[14px]">
+              <Link
+                href={'/about'}
+                className="w-full text-[20px] max-md:text-[14px]"
+              >
                 ABOUT
               </Link>
             </MochaBtn>
