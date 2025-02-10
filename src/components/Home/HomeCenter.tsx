@@ -17,7 +17,7 @@ function Top() {
               max-lg:justify-evenly max-lg:items-center max-lg:text-center
             "
           >
-            <h1 className="max-md:text-[16px]">努力向上</h1>
+            <h1 className="text-2xl max-md:text-[16px]">努力向上</h1>
             <p>探索新颖之事物，开拓明亮之眼界，端正自身之修养</p>
             <div className="btn mt-6 w-[180px] h-[50px] max-md:w-[120px] max-md:h-[30px]">
               <MochaBtn>
@@ -68,7 +68,7 @@ function Bottom() {
           className="favoBtRin animate__animated animate__fadeInDown flex  flex-col justify-around w-[400px] h-[200px] text-accents7
             max-lg:justify-evenly max-lg:items-center"
         >
-          <h1 className="max-md:text-[16px]">与梦前行</h1>
+          <h1 className="text-2xl max-md:text-[16px]">与梦前行</h1>
           <p>新时代青年扬帆起航，昂扬奋进！</p>
 
           <div className="btn mt-6 w-[180px] h-[50px] max-md:w-[120px] max-md:h-[30px]">
