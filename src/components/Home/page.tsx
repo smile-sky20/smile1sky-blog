@@ -1,7 +1,7 @@
 'use client'
 import { siYuan } from '@/assets/font'
-import useThemeStore from '@/utils/useThemeStore'
-import { theme } from '@/utils/useThemeStore'
+import useThemeStore from '@/store/useThemeStore'
+import { theme } from '@/store/useThemeStore'
 
 import HomeTop from './HomeTop'
 import HomeCenter from './HomeCenter'

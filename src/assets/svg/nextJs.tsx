@@ -1,4 +1,4 @@
-import useThemeStore, { getSvgTheme } from '@/utils/useThemeStore'
+import useThemeStore, { getSvgTheme } from '@/store/useThemeStore'
 import { ISvgProps } from './SvgType'
 
 export default function NextJsSvg(props: ISvgProps) {

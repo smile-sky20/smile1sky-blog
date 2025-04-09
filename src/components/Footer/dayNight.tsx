@@ -1,5 +1,5 @@
 import { ImageComp } from '@/utils'
-import useThemeStore, { getSvgTheme, theme } from '@/utils/useThemeStore'
+import useThemeStore, { getSvgTheme, theme } from '@/store/useThemeStore'
 
 export function DayNight() {
   const useTheme = useThemeStore()

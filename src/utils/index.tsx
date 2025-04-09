@@ -1,5 +1,5 @@
 import Image from 'next/image'
-import useThemeStore, { getSvgTheme, theme } from './useThemeStore'
+import useThemeStore, { getSvgTheme, theme } from '@/store/useThemeStore'
 import { useEffect, useState } from 'react'
 
 interface IImageType {

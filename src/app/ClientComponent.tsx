@@ -2,7 +2,7 @@
 import { siYuan } from '@/assets/font'
 import Header from '@/components/Header/page'
 import Footer from '@/components/Footer/page'
-import useThemeStore from '@/utils/useThemeStore'
+import useThemeStore from '@/store/useThemeStore'
 
 import Loading from '@/components/Loading'
 import { Suspense } from 'react'

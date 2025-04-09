@@ -8,7 +8,7 @@ export function TitleLeft() {
     <Link href={'/'} className={`mr-6 flex justify-between items-center gap-x-1 ${siYuan}`}>
       <VercelLogo height={22}></VercelLogo>
       <SplitLineSvg height={32} width={32}></SplitLineSvg>
-      <div className='tracking-wider'>Smile1sky.</div>
+      <div className='tracking-wider'>Smile1Sky.</div>
     </Link>
   )
 }

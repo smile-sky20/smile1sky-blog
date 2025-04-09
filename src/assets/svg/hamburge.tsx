@@ -1,5 +1,5 @@
 import { ISvgProps } from './SvgType'
-import useThemeStore, { getSvgTheme } from '@/utils/useThemeStore'
+import useThemeStore, { getSvgTheme } from '@/store/useThemeStore'
 
 export default function Hamburge(props: ISvgProps) {
   const useTheme = useThemeStore()
