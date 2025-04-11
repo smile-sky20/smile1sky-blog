@@ -10,6 +10,14 @@ const nextConfig = {
   // experimental: {
   //   typedRoutes: true,
   // },
+  rewrites() {
+    return [
+      {
+        source: '/api/:path*', // 匹配所有以 /api 开头的路径
+        destination: 'http://localhost:3220/:path*', // 转发到目标服务
+      },
+    ]
+  },
   images: {
     // 允许访问外部图片
     remotePatterns: [
