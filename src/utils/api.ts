@@ -1,5 +1,3 @@
-import { getToken } from "./system";
-
 interface ApiOptions {
   url: string
   method: 'GET' | 'POST' | 'PUT' | 'DELETE';
@@ -7,17 +5,21 @@ interface ApiOptions {
   headers?: Record<string, string>;
 }
 
+// 定义返回类型
+export type ApiResponse = {
+  code: number;
+  message: string;
+  data: any;
+};
+
 // 定义基础 URL（可以根据环境变量动态设置）
 const BASE_URL = process.env.NEXT_PUBLIC_API_BASE_URL || 'http://localhost:3220/api';
 
 // 创建一个通用的 fetch 封装函数
-async function request(options: ApiOptions) {
+async function request(options: ApiOptions): Promise<ApiResponse> {
   const method = options.method.toUpperCase() || 'GET'
   options.url = formatteUrl(options.url, method, options.data)
   const url = BASE_URL + options.url;
-
-  // token
-  options.headers = { ...options.headers, Authorization: `Bearer ${getToken()}` }
 
   try {
     // 合并默认选项和用户传入的选项
@@ -37,21 +39,20 @@ async function request(options: ApiOptions) {
     }
 
     // 返回解析后的 JSON 数据
-    return await response.json();
+    return response.json();
   } catch (error) {
     console.error('API Error:', error);
     throw error;
   }
 }
 
-// 处理GET请求
+// 处理GET、DELETE请求
 const formatteUrl = (url: string, method: string, data: any) => {
-  if (['GET', 'DELETE'].includes(method)) {
-    const queryString = new URLSearchParams(data).toString();
-    return `${url}${queryString ? `?${queryString}` : ''}`;
-  } else {
-    return url;
-  }
+  // 如果data为空或者不是GET、DELETE请求，则直接返回url
+  if (!data || !['GET', 'DELETE'].includes(method)) return url;
+
+  const queryString = new URLSearchParams(data).toString();
+  return `${url}${queryString ? `?${queryString}` : ''}`;
 }
 
 export default request;
