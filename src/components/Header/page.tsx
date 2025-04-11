@@ -4,7 +4,6 @@ import Links from './links'
 import HeaderLogo from './headerLogo'
 
 export default function Header() {
-  console.log('API URL:', process.env.NEXT_PUBLIC_BASE_PATH);
 
   return (
     <div
