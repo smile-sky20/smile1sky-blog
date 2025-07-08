@@ -20,7 +20,7 @@ export default function ExampleClientComponent({
       >
         <Suspense fallback={<Loading />}>
           <Header />
-          <div className="min-h-[80vh]">{children}</div>
+          <div>{children}</div>
           <Footer />
         </Suspense>
       </body>
