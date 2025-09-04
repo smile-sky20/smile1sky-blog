@@ -1,10 +1,33 @@
 'use client'
 import Image from 'next/image'
 import { siYuan } from '@/assets/font'
+import { useState } from 'react'
 
 import styles from './index.module.css'
 
+const infoList = [
+  { id: 1, title: '1916806218', type: 'QQ', img: '/blog/qq.png' },
+  { id: 2, title: 'g1916806218', type: 'WX', img: '/blog/wx.png' },
+  { id: 3, title: 'smile-sky20', type: 'github', img: '/blog/github.png' },
+]
+
 export default function Blog() {
+  const [copiedItem, setCopiedItem] = useState<string | null>(null)
+
+  const copyToClipboard = async (title: string, type: string) => {
+    try {
+      await navigator.clipboard.writeText(title)
+      setCopiedItem(type)
+      
+      // 3秒后清除提示
+      setTimeout(() => {
+        setCopiedItem(null)
+      }, 1000)
+    } catch (err) {
+      console.error('复制失败:', err)
+    }
+  }
+
   return (
     <div className={`${siYuan.className} ${styles.back} min-h-[80vh] text-2xl py-12 max-lg:px-6`}>
       <div
@@ -28,16 +51,31 @@ export default function Blog() {
                 A Runner && A Language student
               </div>
 
-              <div className="icon-boxs mt-4 flex">
-                {[1, 2, 3, 4].map((item) => (
+              <div className="icon-boxs mt-4 flex relative">
+                {infoList.map((item) => (
                   <div
-                    key={item}
-                    className="mr-2 size-8 border border-accents4 rounded-md"
-                  ></div>
+                    key={item.id}
+                    className="mr-2 size-8 border border-accents4 rounded-md cursor-pointer"
+                    onClick={() => copyToClipboard(item.title, item.type)}
+                  >
+                    <Image 
+                      src={item.img} 
+                      alt={`${item.type} logo`} 
+                      width={32} 
+                      height={32} 
+                    />
+                  </div>
                 ))}
+                
+                {/* 复制成功提示 */}
+                {copiedItem && (
+                  <div className="absolute -top-8 left-0 bg-black text-white text-sm py-1 px-2 rounded whitespace-nowrap">
+                    已复制{copiedItem}
+                  </div>
+                )}
               </div>
 
-              <button className="py-1 px-[12px] mt-8 w-40 border  border-accents6 bg-foreground text-accents1 text-sm font-semibold">
+              <button className="py-1 px-[12px] mt-8 w-40 border border-accents6 bg-foreground text-accents1 text-sm font-semibold">
                 Learn
               </button>
             </div>
