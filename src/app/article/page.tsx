@@ -1,48 +1,27 @@
-// import Link from 'next/link'
-// import { inter } from '@/assets/font'
-// import { getArticleList } from '@/api/article'
+// src/app/article/page.tsx
+import { inter } from '@/assets/font'
 
-// interface ArticleProps {
-//   id: number
-//   title: string
-//   author: string
-//   content: string
-//   createTime: string
-// }
-// export default async function Article() {
-//   const { data } = await getArticleList({})
-//   const article = data.data
+export default async function Article() {
+  return (
+    <div className={`${inter.className} min-h-screen bg-gray-50`}>
+      <article className="max-w-3xl mx-auto px-4 py-8">
+        {/* 文章内容 */}
+        <div className="bg-white rounded-lg shadow-sm p-6 md:p-8">
+          <div className="prose prose-lg max-w-none">
+            <p className="lead text-3xl leading-[42px] text-red-500 text-center font-bold">
+              十四抗战烽火燃，山河泣血映长天。<br />
+              四十改革展新颜，春潮涌起绘宏绵。<br />
+              八零阅兵威振宇，三军列阵气如山。<br />
+              五千历史光辉灿，复兴伟业耀宇寰！
+            </p>
+          </div>
+        </div>
 
-//   return (
-//     <div className={`${inter.className}`}>
-//       <div className="title h-[450px] max-lg:h-80 max-md:h-64 max-sm:h-48 grid bg-accents2 text-5xl max-lg:text-4xl max-sm:text-2xl font-bold" style={{backgroundImage: 'url(/article/article-bg.jpg)',backgroundSize: '100%'}}>
-//         <div className="place-self-center">Study Record</div>
-//       </div>
-//       <div className="article-item-box my-12 mx-auto w-[960px] grid gap-y-8 transition-all max-lg:w-[720px] max-md:w-[540px] max-sm:w-full">
-//         {article.map((article: ArticleProps) => {
-//           return (
-//             <div
-//               key={article.id}
-//               className="article-item p-4 pb-2 border-b border-accents2"
-//             >
-//               <Link
-//                 href={`/article/${article.id}?title=${article.title}`}
-//                 className="article-title text-2xl text-blue-500 hover:text-accents7 transition-all  font-bold"
-//               >
-//                 {article.title}
-//               </Link>
-
-//               <div className="article-content flex text-accents7 text-sm mt-4 gap-x-4">
-//                 <div className="author">@{article.author}</div>
-//                 <div className="time">{article.createTime}</div>
-//               </div>
-//             </div>
-//           )
-//         })}
-//       </div>
-//     </div>
-//   )
-// }
-export default async function Article(){
-  return <div>article</div>
+        {/* 文章底部信息 */}
+        <footer className="mt-8 text-center text-gray-500 text-sm">
+          <p>© 2025 技术博客. 保留所有权利.</p>
+        </footer>
+      </article>
+    </div>
+  )
 }
