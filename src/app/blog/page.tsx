@@ -6,19 +6,24 @@ import { useState } from 'react'
 import styles from './index.module.css'
 
 const infoList = [
-  { id: 1, title: '1916806218', type: 'QQ', img: '/blog/qq.png' },
-  { id: 2, title: 'g1916806218', type: 'WX', img: '/blog/wx.png' },
-  { id: 3, title: 'smile-sky20', type: 'github', img: '/blog/github.png' },
+  { id: 1, title: '1916806218', type: 'QQ', img: '/qq.png' },
+  { id: 2, title: 'g1916806218', type: 'WX', img: '/wx.png' },
+  { id: 3, title: 'https://github.com/smile-sky20', type: 'github', img: '/github.png' },
+  { id: 4, title: 'https://gitee.com/smile1sky', type: 'gitee', img: '/gitee.png' },
 ]
 
 export default function Blog() {
   const [copiedItem, setCopiedItem] = useState<string | null>(null)
 
   const copyToClipboard = async (title: string, type: string) => {
+    if (['github', 'gitee'].includes(type)) {
+      window.open(title, '_blank')
+      return
+    }
     try {
       await navigator.clipboard.writeText(title)
       setCopiedItem(type)
-      
+
       // 3秒后清除提示
       setTimeout(() => {
         setCopiedItem(null)
@@ -56,21 +61,22 @@ export default function Blog() {
                   <div
                     key={item.id}
                     className="mr-2 size-8 border border-accents4 rounded-md cursor-pointer"
+                    title={item.type}
                     onClick={() => copyToClipboard(item.title, item.type)}
                   >
-                    <Image 
-                      src={item.img} 
-                      alt={`${item.type} logo`} 
-                      width={32} 
-                      height={32} 
+                    <Image
+                      src={'/blog' + item.img}
+                      alt={`${item.type} logo`}
+                      width={32}
+                      height={32}
                     />
                   </div>
                 ))}
-                
+
                 {/* 复制成功提示 */}
                 {copiedItem && (
                   <div className="absolute -top-8 left-0 bg-black text-white text-sm py-1 px-2 rounded whitespace-nowrap">
-                    已复制{copiedItem}
+                    已复制{copiedItem}号
                   </div>
                 )}
               </div>
