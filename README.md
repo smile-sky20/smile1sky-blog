@@ -129,3 +129,136 @@ export default function Hydration() {
   return <div suppressHydrationWarning={true}>{num}</div>
 }
 ```
+
+
+
+
+
+# Docker 学习笔记
+
+## 目录
+1. [基础操作](#基础操作)
+2. [进阶优化](#进阶优化)
+3. [常用命令速查表](#常用命令速查表)
+4. [容器管理](#容器管理)
+5. [数据卷（Volume）](#数据卷volume)
+6. [补充说明](#补充说明)
+
+---
+
+## 基础操作
+
+### 1. 构建镜像
+
+```shell
+docker build -t next-image .
+```
+- `-t`：指定镜像名
+- `.`：当前目录
+
+### 2. 运行镜像
+
+```shell
+docker run -d -p 3001:3000 --name next-container next-image
+```
+- `-d`：后台运行
+- `-p 3001:3000`：主机端口 3001 映射到容器端口 3000
+- `--name`：容器命名
+
+### 3. 查看容器运行状态
+
+```shell
+docker ps
+```
+
+---
+
+## 进阶优化
+
+### 1. 删除旧镜像和容器
+
+```shell
+docker stop next-container      # 停止容器
+docker rm next-container        # 删除容器
+docker rmi next-image           # 删除镜像
+```
+
+### 2. 指定平台构建镜像（推荐）
+
+```shell
+docker build --platform linux/amd64 -t next-image .
+```
+- 优点：只下载目标平台依赖，镜像更小
+
+### 3. 重新运行镜像
+
+```shell
+docker run -p 3000:3000 next-image
+```
+
+---
+
+## 常用命令速查表
+
+| 命令                                | 说明                         |
+| ----------------------------------- | ---------------------------- |
+| `docker ps`                         | 查看正在运行的容器           |
+| `docker ps -a`                      | 查看所有容器（包括已停止的） |
+| `docker logs next-container`        | 查看容器日志                 |
+| `docker exec -it next-container sh` | 进入容器内部                 |
+| `docker stop next-container`        | 停止容器                     |
+| `docker start next-container`       | 启动已停止的容器             |
+| `docker rm next-container`          | 删除容器（必须先停止）       |
+| `docker rmi next-app:latest`        | 删除镜像                     |
+| `docker images`                     | 查看所有镜像                 |
+| `docker tag 镜像id next-image:v1`   | 给镜像打标签                 |
+| `docker rename 旧名 新名`           | 重命名容器                   |
+
+---
+
+## 容器管理
+
+### 暂停与恢复
+
+| 命令           | 说明                                   | 恢复命令         |
+| -------------- | -------------------------------------- | ---------------- |
+| `docker stop`  | 停止容器（优雅关闭）                   | `docker start`   |
+| `docker pause` | 暂停容器（冻结进程，不耗 CPU）         | `docker unpause` |
+
+### 进入容器内部
+
+```shell
+docker exec -it next-container /bin/sh
+```
+- `-i`：交互模式
+- `-t`：分配伪终端
+
+### 重命名容器
+
+```shell
+docker rename 旧容器名 新容器名
+```
+- 容器处于任何状态都可重命名
+
+---
+
+## 数据卷（Volume）
+
+本地文件与容器同步，无需重建镜像：
+
+```shell
+docker run -d -p 3002:3000 --name next-container -v $(pwd):/app next-image
+```
+- `-v $(pwd):/app`：将当前目录映射到容器 `/app` 目录
+
+---
+
+## 补充说明
+
+- **镜像体积优化**：指定平台只下载所需依赖，减少镜像体积。
+- **容器命名与管理**：重命名后需用新名字操作容器。
+- **日志查看**：`docker logs 容器名` 可实时查看容器输出。
+
+---
+
+> 建议：每次操作前，先用 `docker ps -a` 查看容器状态，避免误删或重复创建。

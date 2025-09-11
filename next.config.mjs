@@ -6,6 +6,10 @@
 
 /** @type {import('next').NextConfig} */
 const nextConfig = {
+  // 启用独立构建模式（减小产物体积）
+  output: 'standalone',
+  // 生产环境禁用 source map（减小 .next 体积）
+  productionBrowserSourceMaps: false,
   // Next.js 可以对链接进行静态类型检查，以防止在使用 next/link 时出现拼写错误和其他错误，从而提高在页面间导航时的类型安全性。
   // experimental: {
   //   typedRoutes: true,
