@@ -13,7 +13,7 @@ export function HomeBottom() {
       </div>
       <div className="clearBt mt-12 flex justify-center items-center max-lg:block">
         <div className="clearBtL flex-1 flex justify-center">
-          <img src="/home/bottom.webp" alt="" className="w-[360px] h-[310px]" />
+          <img src="/home/bottom.webp" alt="" className="w-[360px] h-[310px] rounded-md dark:shadow-[0_0_20px_rgba(255,255,255,0.15)]" />
         </div>
         <div className="clearBtR flex-1 h-full flex flex-col justify-center items-center">
           <div className="relative flex top-[20px] left-[40px] pl-[30px] w-[300px] text-accents8 tracking-[1.5px] indent-[2em]">

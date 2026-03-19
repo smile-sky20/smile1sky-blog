@@ -29,10 +29,10 @@ function Top() {
           </div>
         </div>
         <div
-          className="favotopR flex-1 overflow-hidden 
+          className="favotopR flex-1 overflow-hidden
           max-lg:flex max-lg:justify-center"
         >
-          <div className="favoOut w-[450px] flex justify-center items-center transition-transform duration-500 hover:scale-125">
+          <div className="favoOut w-[450px] flex justify-center items-center transition-transform duration-500 hover:scale-125 rounded-md overflow-hidden dark:shadow-[0_0_20px_rgba(255,255,255,0.15)]">
             <img
               src="/home/center1.jpg"
               className="img_box animate__animated animate__fadeInDown"
@@ -52,10 +52,10 @@ function Bottom() {
         max-lg:flex-col-reverse"
     >
       <div
-        className="favoBtL flex-1 overflow-hidden 
+        className="favoBtL flex-1 overflow-hidden
           max-lg:flex max-lg:justify-center"
       >
-        <div className="favoOut w-[450px] flex justify-center items-center transition-transform duration-500 hover:scale-125">
+        <div className="favoOut w-[450px] flex justify-center items-center transition-transform duration-500 hover:scale-125 rounded-md overflow-hidden dark:shadow-[0_0_20px_rgba(255,255,255,0.15)]">
           <img
             src="/home/center2.jpg"
             className="img_box animate__animated animate__fadeInDown"

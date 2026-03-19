@@ -9,6 +9,7 @@ export const linksArr = [
   { name: 'Blog', url: '/blog', svg: true },
   { name: 'Article', url: '/article', svg: true },
   { name: 'About', url: '/about' },
+  { name: 'Dream', url: '/dream', svg: true },
 ]
 export default function Links() {
   const path = usePathname()
@@ -20,10 +21,10 @@ export default function Links() {
         <div className={`relative`} key={link.name}>
           <Link
             href={link.url}
-            className={`mr-8 h-16 flex items-center text-lg text-accents7 hover:text-accents8 transition-colors   
+            className={`mr-8 h-20 flex items-center text-base text-accents7 hover:text-accents8 transition-colors
               ${
                 selectedIndex === index
-                  ? 'text-blue-500 hover:text-blue-500'
+                  ? 'text-mocha hover:text-mocha'
                   : ''
               } `}
           >
@@ -39,7 +40,7 @@ export default function Links() {
             >
               <path
                 d="M1.25215 5.54731L0.622742 4.9179L3.78169 1.75597H1.3834L1.38936 0.890915H5.27615V4.78069H4.40513L4.41109 2.38538L1.25215 5.54731Z"
-                fill="#999"
+                fill="currentColor"
               ></path>
             </svg>
           )}

@@ -4,59 +4,72 @@ import './index.modules.scss'
 interface IProps {
   list: string[]
   speed?: number
-  style: any
+  style?: string
 }
 const Typewriter: FC<IProps> = ({ list, speed = 50, style = '' }) => {
-  const [value, setValue] = useState<string>(list[0])
+  // 处理 list 为空的边界情况
+  const [value, setValue] = useState<string>(list[0] || '')
   // 显示的文字
   const [displayText, setDisplayText] = useState<string>('')
   // 显示到的索引
   const [index, setIndex] = useState<number>(0)
-  // 打字方向 false左
+  // 打字方向 false=删除(向左), true=输入(向右)
   const [flag, setFlag] = useState<boolean>(true)
 
   // 定时器
   const timer: RefObject<any> = useRef(null)
 
-  // 控制打字方向
-  useEffect(() => {
-    if (index <= 0 && !flag) setFlag(true)
-    if (index > value.length && flag) setFlag(false)
-  }, [value, speed, flag])
-
   // 创建打字机效果
   useEffect(() => {
+    if (list.length === 0) return
+
     const speedMap = {
       // 起始速度
-      0: speed * 2,
-      // 打字速度
-      [value.length]: speed * 4,
+      0: speed * 4,
       // 内容完全时停顿时间
-      [value.length + 1]: 1500,
+      [value.length]: 1500,
     }
+
     timer.current = setTimeout(() => {
       if (flag) {
-        setDisplayText((prev: any) => prev + (value[index] ?? ''))
-        setIndex((prev: number) => {
-          if (prev + 1 > value.length) setFlag(false)
-          return prev + 1
+        // 正向打字
+        setDisplayText((prev) => prev + (value[index] ?? ''))
+        setIndex((prev) => {
+          const next = prev + 1
+          // 当打完所有字符后，切换方向
+          if (next > value.length) {
+            setFlag(false)
+          }
+          return next
         })
       } else {
-        setDisplayText((prev: string) => prev.substring(0, prev.length - 1))
-        setIndex((prev: number) => prev - 1)
-        if (index < 0) {
-          setValue(list[Math.floor(Math.random() * list.length)])
-        }
+        // 反向删除
+        setDisplayText((prev) => prev.substring(0, prev.length - 1))
+        setIndex((prev) => {
+          const next = prev - 1
+          // 当删除完所有字符后，切换方向并随机选择下一个文本
+          if (next <= 0) {
+            setFlag(true)
+            // 随机选择一个不同于当前的文本
+            let nextValue
+            do {
+              nextValue = list[Math.floor(Math.random() * list.length)]
+            } while (nextValue === value && list.length > 1)
+            setValue(nextValue)
+            setDisplayText('')
+          }
+          return next
+        })
       }
-      // console.log(value.length, index, speedMap[index] || speed)
     }, speedMap[index] || speed)
+
     return () => {
       if (timer.current) {
         clearTimeout(timer.current)
         timer.current = null
       }
     }
-  }, [value, speed, flag, index])
+  }, [value, speed, flag, index, list])
 
   return <div className={`typewriter ${style}`}>{displayText}</div>
 }

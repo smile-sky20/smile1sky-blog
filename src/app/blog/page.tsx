@@ -34,64 +34,65 @@ export default function Blog() {
   }
 
   return (
-    <div className={`${siYuan.className} ${styles.back} min-h-[80vh] text-2xl py-12 max-lg:px-6`}>
+    <div className={`${siYuan.className} ${styles.back} min-h-[80vh] text-2xl py-16 max-lg:px-6`}>
       <div
-        className={`card-warp-border p-1 flex justify-center items-center border border-accents3`}
+        className={`card-warp max-w-5xl w-full ${styles.cardBg} px-8 md:px-12 lg:px-16 py-12 bg-transparent`}
       >
-        <div
-          className={`card-warp ${styles.cardBg} max-sm:px-4 max-md:px-6 max-lg:px-8 lg:px-12 py-6 bg-background border border-accents3 shadow-2xl shadow-accents4`}
-        >
-          <div className="card-box mt-12 flex justify-center items-center transition-all duration-500">
-            <div className="card-left mx-24 max-md:mx-20 flex flex-col max-md:items-center">
-              <div className="text-base">My Name is</div>
-              <div
-                className={`mt-4 text-5xl max-lg:text-4xl max-md:text-3xl font-bold underline decoration-sky-300 transition-all duration-200`}
-              >
-                Smile &frac12; sky.
-              </div>
-              <div className="mt-6 text-base text-accents6">
-                A Front-End Developer
-              </div>
-              <div className="mt-2 text-sm text-accents5">
-                A Runner && A Language student
-              </div>
-
-              <div className="icon-boxs mt-4 flex relative">
-                {infoList.map((item) => (
-                  <div
-                    key={item.id}
-                    className="mr-2 size-8 border border-accents4 rounded-md cursor-pointer"
-                    title={item.type}
-                    onClick={() => copyToClipboard(item.title, item.type)}
-                  >
-                    <Image
-                      src={'/blog' + item.img}
-                      alt={`${item.type} logo`}
-                      width={32}
-                      height={32}
-                    />
-                  </div>
-                ))}
-
-                {/* 复制成功提示 */}
-                {copiedItem && (
-                  <div className="absolute -top-8 left-0 bg-black text-white text-sm py-1 px-2 rounded whitespace-nowrap">
-                    已复制{copiedItem}号
-                  </div>
-                )}
-              </div>
-
-              <button className="py-1 px-[12px] mt-8 w-40 border border-accents6 bg-foreground text-accents1 text-sm font-semibold">
-                Learn
-              </button>
+        <div className="card-box flex flex-col md:flex-row justify-center items-center gap-12 md:gap-16 transition-all duration-500">
+          <div className="card-left flex flex-col items-center md:items-start">
+            <div className="text-sm text-accents5 tracking-wide">My Name is</div>
+            <div
+              className={`mt-3 text-5xl max-lg:text-4xl max-md:text-3xl font-semibold text-accents8 transition-all duration-200`}
+            >
+              Smile &frac12; sky.
+            </div>
+            <div className="mt-6 text-base text-accents6">
+              A Front-End Developer
+            </div>
+            <div className="mt-2 text-sm text-accents5">
+              A Runner &nbsp;•&nbsp; A Language student
             </div>
 
-            <div className="card-right flex-1 flex max-sm:hidden justify-center items-center">
+            <div className="icon-boxs mt-6 flex relative">
+              {infoList.map((item) => (
+                <div
+                  key={item.id}
+                  className="mr-3 size-9 rounded-md cursor-pointer hover:opacity-70 transition-opacity bg-white dark:bg-white p-[1px]"
+                  title={item.type}
+                  onClick={() => copyToClipboard(item.title, item.type)}
+                >
+                  <Image
+                    src={'/blog' + item.img}
+                    alt={`${item.type} logo`}
+                    width={36}
+                    height={36}
+                    className="rounded-md"
+                  />
+                </div>
+              ))}
+
+              {/* 复制成功提示 */}
+              {copiedItem && (
+                <div className="absolute -top-8 left-0 bg-accents8 text-accents1 text-sm py-1 px-2 rounded">
+                  已复制{copiedItem}
+                </div>
+              )}
+            </div>
+
+            <button className="py-2 px-6 mt-8 w-fit border border-accents4 text-accents7 bg-transparent text-sm font-medium hover:bg-accents1 hover:border-accents5 transition-colors duration-200">
+              Let&apos;s connect
+            </button>
+          </div>
+
+          <div className="card-right flex-shrink-0 flex max-sm:mt-4 justify-center items-center">
+            <div className="relative">
+              <div className="absolute -inset-1 bg-gradient-to-tr from-mocha to-sky-200 rounded-full blur-md opacity-40 dark:opacity-20"></div>
               <Image
                 src="/blog.png"
-                alt="Next.js logo"
-                width={300}
-                height={300}
+                alt="Avatar"
+                width={260}
+                height={260}
+                className="relative rounded-full"
               />
             </div>
           </div>

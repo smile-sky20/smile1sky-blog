@@ -20,11 +20,11 @@ export function Top() {
           ——Mysterious smile from space
         </div>
       </div>
-      <div className="heart relative w-full max-w-[1280px] flex justify-center text-white max-2xl:px-24 max-xl:px-20 max-lg:px-16 max-md:px-6">
+      <div className="heart relative w-full max-w-[1280px] flex justify-center text-white drop-shadow-md max-2xl:px-24 max-xl:px-20 max-lg:px-16 max-md:px-6">
         <img
           src="/home/daozi.png"
           alt=""
-          className="p-auto w-full h-[550px] transition-all duration-500 max-lg:h-[500px] max-md:h-[400px] object-cover"
+          className="p-auto w-full h-[550px] transition-all duration-500 max-lg:h-[500px] max-md:h-[400px] object-cover rounded-md dark:shadow-[0_0_20px_rgba(255,255,255,0.15)]"
         />
 
         <div
@@ -35,8 +35,8 @@ export function Top() {
           max-md:top-[180px] max-md:left-[90px]"
         >
           <div
-            className=" text-[36px] font-bold tracking-[7px] select-none 
-            max-lg:text-[28px] max-lg:tracking-[4px] 
+            className="text-white text-[36px] font-bold tracking-[7px] select-none
+            max-lg:text-[28px] max-lg:tracking-[4px]
             max-md:text-[20px] max-md:tracking-[3px]"
           >
             Do What You Want To
@@ -46,30 +46,19 @@ export function Top() {
             <Typewriter
               list={TypeWriterList}
               style={`
-              text-[36px] font-bold tracking-[7px] select-none
-              max-lg:text-[28px] max-lg:tracking-[4px] 
+              text-white text-[36px] font-bold tracking-[7px] select-none
+              max-lg:text-[28px] max-lg:tracking-[4px]
               max-md:text-[20px] max-md:tracking-[3px]
             `}
             />
           </div>
 
           <div
-            className="mt-3 text-[20px] select-none 
+            className="mt-3 text-white text-[20px] select-none
             max-lg:text-[16px]
             max-md:text-[14px]"
           >
             心随梦前行 & 梦随心而动
-          </div>
-
-          <div className="btn mt-6 w-[150px] h-[50px] max-md:w-[120px] max-md:h-[30px]">
-            <MochaBtn>
-              <Link
-                href={'/about'}
-                className="w-full text-[20px] max-md:text-[14px]"
-              >
-                ABOUT
-              </Link>
-            </MochaBtn>
           </div>
         </div>
       </div>
