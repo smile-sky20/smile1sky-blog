@@ -9,7 +9,7 @@ export const linksArr = [
   { name: 'Blog', url: '/blog', svg: true },
   { name: 'Article', url: '/article', svg: true },
   { name: 'About', url: '/about' },
-  { name: 'Dream', url: '/dream', svg: true },
+  // { name: 'Dream', url: '/dream', svg: true },
 ]
 export default function Links() {
   const path = usePathname()
