@@ -7,7 +7,6 @@ import useFollowPointer from './useFllowPointer'
 export function MouseComp() {
   const ref = useRef(null)
   const { x, y } = useFollowPointer(ref as any)
-  console.log(`🧧🧨 → file: page.tsx:23 → x, y:`, x, y)
 
   return (
     <>
