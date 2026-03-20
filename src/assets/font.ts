@@ -8,17 +8,20 @@ export const geistSans = localFont({
   src: './fonts/GeistVF.woff',
   variable: '--font-geist-sans',
   weight: '100 900',
+  display: 'swap',
 })
 export const geistMono = localFont({
   src: './fonts/GeistMonoVF.woff',
   variable: '--font-geist-mono',
   weight: '100 900',
+  display: 'swap',
 })
 // 思源体
 export const siYuan = localFont({
   src: './fonts/siYuan.otf',
   variable: '--font-noto-sans-sc',
   weight: '100 900',
+  display: 'swap',
 })
 
 // 文艺风
