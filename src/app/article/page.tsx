@@ -3,7 +3,7 @@ import { siYuan } from '@/assets/font'
 
 export default async function Article() {
   return (
-    <div className={`${siYuan.className} min-h-[80vh] py-16 px-6`}>
+    <div className={`${siYuan.className} min-h-[80vh] py-16 px-6 flex flex-col justify-center`}>
       <article className="max-w-3xl mx-auto">
         {/* 诗歌标题区域 */}
         <header className="text-center mb-12">

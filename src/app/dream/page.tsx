@@ -2,7 +2,7 @@ import { siYuan } from '@/assets/font'
 
 export function Dream() {
   return (
-    <div className={`${siYuan.className} min-h-[80vh] py-12 px-6`}>
+    <div className={`${siYuan.className} min-h-[80vh] py-12 px-6 flex flex-col justify-center`}>
       <div className="max-w-5xl mx-auto">
         <div className="grid md:grid-cols-2 gap-8 md:gap-12 items-center">
           {/* 诗词区域 */}
