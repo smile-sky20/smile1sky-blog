@@ -5,7 +5,8 @@ import Footer from '@/components/Footer/page'
 import useThemeStore from '@/store/useThemeStore'
 
 import Loading from '@/components/Loading'
-import { Suspense } from 'react'
+import { Suspense, useEffect } from 'react'
+import { usePathname } from 'next/navigation'
 
 export default function ExampleClientComponent({
   children,
@@ -13,6 +14,13 @@ export default function ExampleClientComponent({
   children: React.ReactNode
 }) {
   const theme = useThemeStore()
+  const pathname = usePathname()
+
+  // 路由跳转时滚动到页面顶部
+  useEffect(() => {
+    window.scrollTo(0, 0)
+  }, [pathname])
+
   return (
     <html lang="zh" className={`${theme.activeTheme}`}>
       <body
